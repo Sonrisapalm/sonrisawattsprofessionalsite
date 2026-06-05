@@ -1,96 +1,314 @@
+```html
 <!DOCTYPE html>
 <html lang="en" class="h-full">
 <head>
-    <meta charset="UTF-8">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        body { background: #000; color: #fff; font-family: 'Inter', sans-serif; height: 100vh; overflow: hidden; }
-        
-        /* Fixed Glassmorphism: Increased transparency and blur */
-        .glass-luxury { 
-            background: rgba(255, 255, 255, 0.08); 
-            backdrop-filter: blur(60px); 
-            -webkit-backdrop-filter: blur(60px); 
-            border: 1px solid rgba(255, 255, 255, 0.2); 
-            border-radius: 40px; 
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8); 
-        }
-        
-        .glass-3d { perspective: 1200px; }
-        .map-frame { transform: rotateX(20deg) rotateY(-10deg); box-shadow: 0 50px 100px rgba(0, 0, 0, 0.9); border: 1px solid rgba(255, 255, 255, 0.2); }
-        .gallery-frame { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(30px); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 30px; box-shadow: 0 30px 60px -10px rgba(0, 0, 0, 0.9); }
-        
-        h1, h2, h3 { font-weight: 900; letter-spacing: 0.1em; }
-        p, li { letter-spacing: 0.025em; }
-        .content-scroll { overflow-y: auto; height: 85vh; padding-right: 20px; }
-        .content-scroll::-webkit-scrollbar { display: none; }
-    </style>
+<meta charset="UTF-8">
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+
+body{
+    background:
+    radial-gradient(circle at top left,
+    rgba(255,255,255,.08),
+    transparent 30%),
+
+    radial-gradient(circle at bottom right,
+    rgba(255,255,255,.04),
+    transparent 40%),
+
+    #020202;
+
+    color:#fff;
+    font-family:'Inter',sans-serif;
+    height:100vh;
+    overflow:hidden;
+}
+
+.glass-luxury{
+    position:relative;
+    overflow:hidden;
+
+    background:rgba(255,255,255,.06);
+
+    backdrop-filter:blur(80px);
+    -webkit-backdrop-filter:blur(80px);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    border-radius:50px;
+
+    box-shadow:
+    0 40px 120px rgba(0,0,0,.85),
+    inset 0 1px 0 rgba(255,255,255,.08);
+}
+
+.glass-luxury::before{
+    content:"";
+    position:absolute;
+    top:-250%;
+    left:-50%;
+    width:100%;
+    height:600%;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.05),
+        transparent
+    );
+
+    transform:rotate(25deg);
+    pointer-events:none;
+}
+
+.glass-3d{
+    perspective:1200px;
+}
+
+.map-frame{
+    transform:rotateX(20deg) rotateY(-10deg);
+    box-shadow:0 50px 100px rgba(0,0,0,.9);
+    border:1px solid rgba(255,255,255,.15);
+}
+
+.gallery-frame{
+    background:rgba(255,255,255,.05);
+    backdrop-filter:blur(30px);
+    border:1px solid rgba(255,255,255,.15);
+    border-radius:30px;
+    box-shadow:0 30px 60px -10px rgba(0,0,0,.9);
+}
+
+.glass-link{
+    background:rgba(255,255,255,.05);
+    backdrop-filter:blur(30px);
+    border:1px solid rgba(255,255,255,.12);
+    transition:.4s ease;
+}
+
+.glass-link:hover{
+    background:rgba(255,255,255,.10);
+    transform:translateY(-3px);
+}
+
+h1,h2,h3{
+    font-weight:900;
+    letter-spacing:.1em;
+}
+
+p,li{
+    letter-spacing:.025em;
+}
+
+.content-scroll{
+    overflow-y:auto;
+    height:85vh;
+    padding-right:20px;
+}
+
+.content-scroll::-webkit-scrollbar{
+    display:none;
+}
+
+.research-card{
+    background:rgba(255,255,255,.03);
+    backdrop-filter:blur(60px);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:40px;
+    padding:40px;
+    box-shadow:0 40px 120px rgba(0,0,0,.5);
+}
+
+</style>
 </head>
+
 <body class="p-12">
 
-    <div class="max-w-screen-2xl mx-auto grid grid-cols-12 gap-16 h-full items-center">
-        <nav class="col-span-3 space-y-12">
-            <h1 class="text-3xl uppercase">Sonrisa Watts</h1>
-            <ul class="space-y-8">
-                <li><a href="#" class="text-[10px] tracking-[0.3em] uppercase opacity-60">Portfolio</a></li>
-                <li><a href="#" class="text-[10px] tracking-[0.3em] uppercase opacity-60">Pictures of Me</a></li>
-                <li><a href="#" class="text-[10px] tracking-[0.3em] uppercase opacity-60">Accomplishments</a></li>
-            </ul>
-        </nav>
+<div class="max-w-screen-2xl mx-auto grid grid-cols-12 gap-16 h-full items-center">
 
-        <main class="col-span-9 content-scroll">
-            <section class="space-y-24 pb-24">
-                <div>
-                    <h2 class="text-[9px] uppercase tracking-[0.8em] text-zinc-500 mb-10">Pictures of Me</h2>
-                    <div class="flex gap-8">
-                        <div class="gallery-frame w-72 h-80"></div>
-                        <div class="gallery-frame w-72 h-80"></div>
-                        <div class="gallery-frame w-72 h-80"></div>
-                    </div>
-                </div>
+<nav class="col-span-3 space-y-12">
 
-                <div class="glass-luxury p-12 space-y-12">
-                    <div class="text-center border-b border-white/10 pb-8">
-                        <h2 class="text-2xl tracking-tight">What I accomplished at age 24-25 in under 9 months!</h2>
-                        <!-- Bold and big as requested -->
-                        <p class="text-white font-black uppercase tracking-[0.2em] text-2xl mt-4">From my tiny 48,000 population Caribbean island</p>
-                    </div>
+<h1 class="text-4xl uppercase">
+Sonrisa Watts
+</h1>
 
-                    <div class="glass-3d h-64">
-                        <div class="map-frame w-full h-full overflow-hidden rounded-[30px]">
-                            <iframe class="w-full h-full" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d30560.8!2d-62.7!3d17.3!2m3!1f0!2f45!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2sus!4v1" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                        </div>
-                    </div>
+<ul class="space-y-8">
+<li><a href="#" class="text-[10px] tracking-[0.3em] uppercase opacity-60">Portfolio</a></li>
+<li><a href="#" class="text-[10px] tracking-[0.3em] uppercase opacity-60">Pictures of Me</a></li>
+<li><a href="#" class="text-[10px] tracking-[0.3em] uppercase opacity-60">Accomplishments</a></li>
+</ul>
 
-                    <div class="space-y-16 text-zinc-300">
-                        <div>
-                            <h3 class="text-xl uppercase text-white mb-6">Emotion Encoded</h3>
-                            <p class="text-[11px] uppercase text-zinc-400 tracking-[0.2em] mb-8">Independent Research Initiative- Emotion Encoded | Founder & Principal Researcher | June 2025- Present | St.Kitts & Nevis</p>
-                            <ul class="space-y-6 leading-relaxed list-disc ml-6 text-sm">
-                                <li>Independently conceptualized , designed and executed mixed-methods studies (N≈133+) investigating how emotional reasoning, heuristics, metacognition, and cognitive bias drive psychological resistance to Artificial Intelligence in high-stakes fields (medicine, law, finance) in the Caribbean. Findings from logistic regression modeling(Python, using pandas, matplotlib, seaborn) revealed agency bias, metacognitive dissonance & affective heuristics as dominant predictors of AI trust (OR=2.96, trend-level significance).</li>
-                                <li>Research findings were formally cited in a Ministry of Education national policy proposal on digital literacy and AI ethics, potentially impacting over 3,000 students.</li>
-                                <li>Secured $700 USD in initial microgrant funding to establish an AI Tools Micro-Grant Program, equipping entrepreneurs with ethical AI access and support.</li>
-                                <li>Conducted an extensive professional interview series (N≈40+), performing thematic and semantic analyses of experts, including a biomedical engineering professor of Johns Hopkins University, physicians in internal medicine, oncologists, radiologists, surgeons, cardiologists, founders of tele-health and behavioural science startups, attorneys-at-law, and psychologists in Caribbean region to identify conditional acceptance, accountability ambiguity, and perceived threat to expertise as core cognitive-emotional barriers to professional AI adoption.</li>
-                                <li>Preprint on PsyArXiv: Independent research paper, "The Cognitive Foundations of Algorithmic Trust: Human Reasoning in High-Stakes AI Systems," accepted and available on the psychology preprint server.</li>
-                                <li>Authored and published 40 + open-access briefs (e.g., “AI Therapists vs. Financial Advisors: Cognitive-Emotional Divides in Trust”) on website fostering public literacy on decoding emotional barriers to AI adoption.</li>
-                            </ul>
-                        </div>
+</nav>
 
-                        <div class="border-t border-white/10 pt-16">
-                            <h3 class="text-xl uppercase text-white mb-6">Stanford Medicine x Emotion Encoded</h3>
-                            <p class="text-[11px] uppercase text-zinc-400 tracking-[0.2em] mb-8">Stanford University -School of Medicine | Global Health Innovation | Research Collaborative Partnership & Co Author | March 2026 – Present</p>
-                            <img src="images/Emotion_Encoded x_Stanford _University_Collaboration.jpg" alt="Collaboration" class="rounded-[30px] w-full border border-white/10 shadow-2xl mb-12">
-                            <ul class="space-y-6 leading-relaxed list-disc ml-6 text-sm">
-                                <li>Invited by Stanford School of Medicine to incorporate Emotion Encoded’s proprietary Caribbean physician insights into Stanford’s Global AI Implementation Curriculum on clinicians using AI , having been formally requested by faculty , filling a critical regional data gap.</li>
-                                <li>Collaborative Partnership: facilitating the integration and adoption of Emotion Encoded’s research findings into the curriculum to establish a permanent case study for AI implementation, which will be promoted to different medical institutions and faculties and ministries of health.</li>
-                                <li>Providing localized qualitative datasets and thematic analyses to architect frameworks for calibrating human-AI trust among medical specialists, translating regional data into scalable insights for clinical automation and global health delivery within resource-constrained environments.</li>
-                                <li>Co-authoring a first-author peer-reviewed manuscript with (Stanford Faculty) on Caribbean physician perspectives on clinical AI trust.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </main>
-    </div>
+<main class="col-span-9 content-scroll">
+
+<section class="space-y-24 pb-24">
+
+<div>
+
+<h2 class="text-[9px] uppercase tracking-[0.8em] text-zinc-500 mb-10">
+Pictures of Me
+</h2>
+
+<div class="flex gap-8">
+
+<div class="gallery-frame w-72 h-80"></div>
+
+<div class="gallery-frame w-72 h-80"></div>
+
+<div class="gallery-frame w-72 h-80"></div>
+
+</div>
+
+</div>
+
+<div class="glass-luxury p-12 space-y-12">
+
+<div class="text-center border-b border-white/10 pb-12">
+
+<div class="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white/5 border border-white/10 backdrop-blur-xl mb-10">
+
+<div class="w-2 h-2 rounded-full bg-white"></div>
+
+<span class="text-[10px] uppercase tracking-[0.45em]">
+ Accomplishments
+</span>
+
+</div>
+
+<h2 class="text-5xl font-black leading-none">
+What I Accomplished
+<br>
+At Age 24-25
+</h2>
+
+<p class="text-white font-black uppercase tracking-[0.25em] text-3xl mt-8">
+I was born and raised and acieved my accomplisments from a tiny Caribbean Twin island Of Just 48,000 People
+</p>
+
+</div>
+
+<div class="glass-3d h-64">
+
+<div class="map-frame w-full h-full overflow-hidden rounded-[30px]">
+
+<iframe
+class="w-full h-full"
+src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d30560.8!2d-62.7!3d17.3!2m3!1f0!2f45!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2sus!4v1"
+style="border:0;"
+allowfullscreen=""
+loading="lazy">
+</iframe>
+
+</div>
+
+</div>
+
+<div class="space-y-16 text-zinc-300">
+
+<div class="research-card">
+
+<div class="flex items-center justify-between mb-8">
+
+<div>
+
+<h3 class="text-3xl uppercase text-white tracking-[0.15em]">
+Emotion Encoded
+</h3>
+
+<p class="text-[11px] uppercase text-zinc-400 tracking-[0.25em] mt-3">
+Independent Research Initiative • Founder & Principal Researcher • June 2025 – Present • St. Kitts & Nevis
+    
+</p>
+
+</div>
+
+<a
+href="https://encodedemotion.org"
+target="_blank"
+class="glass-link flex items-center gap-4 px-6 py-4 rounded-full">
+
+<img
+src="images/emotionencodedlogo.png"
+alt="Emotion Encoded Logo"
+class="w-12 h-12 object-contain">
+
+<div>
+
+<div class="text-[10px] uppercase tracking-[0.35em] text-zinc-500">
+Official Website
+</div>
+
+<div class="font-semibold">
+encodedemotion.org
+</div>
+
+</div>
+
+</a>
+
+</div>
+
+<ul class="space-y-6 leading-relaxed list-disc ml-6 text-sm">
+
+<<li>Emotion Encoded</li>
+<li>Independent Research Initiative—Emotion Encoded | Founder & Principal Researcher | June 2025–Present | St. Kitts & Nevis</li>
+
+<li>Independently conceptualized, designed, and executed mixed-methods studies (N≈133+) investigating how emotional reasoning, heuristics, metacognition, and cognitive bias drive psychological resistance to Artificial Intelligence in high-stakes fields (medicine, law, finance) in the Caribbean. Findings from logistic regression modeling (Python, using pandas, matplotlib, seaborn) revealed agency bias, metacognitive dissonance, and affective heuristics as dominant predictors of AI trust (OR=2.96, trend-level significance).[cite: 1]</li>
+
+<li>Research findings were formally cited in a Ministry of Education national policy proposal on digital literacy and AI ethics, potentially impacting over 3,000 students.[cite: 1]</li>
+
+<li>Secured $700 USD in initial microgrant funding to establish an AI Tools Micro-Grant Program, equipping entrepreneurs with ethical AI access and support.[cite: 1]</li>
+
+<li>Conducted an extensive professional interview series (N≈40+), performing thematic and semantic analyses of experts, including a biomedical engineering professor of Johns Hopkins University, physicians in internal medicine, oncologists, radiologists, surgeons, cardiologists, founders of tele-health and behavioural science startups, attorneys-at-law, and psychologists in the Caribbean region to identify conditional acceptance, accountability ambiguity, and perceived threat to expertise as core cognitive-emotional barriers to professional AI adoption.[cite: 1]</li>
+
+<li>Preprint on PsyArXiv: Independent research paper, "The Cognitive Foundations of Algorithmic Trust: Human Reasoning in High-Stakes AI Systems," accepted and available on the psychology preprint server.[cite: 1]</li>
+
+<li>Authored and published 40+ open-access briefs (e.g., “AI Therapists vs. Financial Advisors: Cognitive-Emotional Divides in Trust”) on website fostering public literacy on decoding emotional barriers to AI adoption.[cite: 1]</li>
+
+</ul>
+
+</div>
+
+<div class="border-t border-white/10 pt-16">
+
+<h3 class="text-xl uppercase text-white mb-6">
+Stanford Medicine x Emotion Encoded
+</h3>
+
+<p class="text-[11px] uppercase text-zinc-400 tracking-[0.2em] mb-8">
+Stanford University School of Medicine | Global Health Innovation | Research Collaborative Partnership & Co Author | March 2026 – Present
+</p>
+
+<img
+src="images/Emotion_Encoded x_Stanford _University_Collaboration.jpg"
+alt="Collaboration"
+class="rounded-[30px] w-full border border-white/10 shadow-2xl mb-12">
+
+<ul class="space-y-6 leading-relaxed list-disc ml-6 text-sm">
+
+<li>Invited by Stanford School of Medicine to incorporate Emotion Encoded’s proprietary Caribbean physician insights into Stanford’s Global AI Implementation Curriculum on clinicians using AI, having been formally requested by faculty, filling a critical regional data gap.[cite: 1]</li>
+
+<li>Collaborative Partnership: facilitating the integration and adoption of Emotion Encoded’s research findings into the curriculum to establish a permanent case study for AI implementation, which will be promoted to different medical institutions and faculties and ministries of health.[cite: 1]</li>
+
+<li>Providing localized qualitative datasets and thematic analyses to architect frameworks for calibrating human-AI trust among medical specialists, translating regional data into scalable insights for clinical automation and global health delivery within resource-constrained environments.[cite: 1]</li>
+
+<li>Co-authoring a first-author peer-reviewed manuscript with Stanford faculty on Caribbean physician perspectives on clinical AI trust.[cite: 1]</li>
+</ul>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+</div>
+
 </body>
 </html>
+```
