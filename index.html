@@ -1,83 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-full">
 <head>
     <meta charset="UTF-8">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body { 
-            background: #000; 
-            color: #fff; 
-            font-family: 'Inter', sans-serif; 
+        body { background: #000; color: #fff; font-family: 'Inter', sans-serif; height: 100vh; overflow: hidden; }
+        
+        /* Fixed Glassmorphism: Increased transparency and blur */
+        .glass-luxury { 
+            background: rgba(255, 255, 255, 0.08); 
+            backdrop-filter: blur(60px); 
+            -webkit-backdrop-filter: blur(60px); 
+            border: 1px solid rgba(255, 255, 255, 0.2); 
+            border-radius: 40px; 
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8); 
         }
-
-        /* Deep Frosted Glass Layer */
-        .glass-luxury {
-            background: rgba(255, 255, 255, 0.04);
-            backdrop-filter: blur(50px);
-            -webkit-backdrop-filter: blur(50px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 40px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
-        }
-
-        /* Glass Gallery Container */
-        .glass-box {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(25px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 30px;
-        }
-
-        .section-title {
-            letter-spacing: 0.8em;
-            text-transform: uppercase;
-            font-size: 9px;
-            color: rgba(255, 255, 255, 0.5);
-            margin-bottom: 3rem;
-        }
+        
+        .glass-3d { perspective: 1200px; }
+        .map-frame { transform: rotateX(20deg) rotateY(-10deg); box-shadow: 0 50px 100px rgba(0, 0, 0, 0.9); border: 1px solid rgba(255, 255, 255, 0.2); }
+        .gallery-frame { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(30px); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 30px; box-shadow: 0 30px 60px -10px rgba(0, 0, 0, 0.9); }
+        
+        h1, h2, h3 { font-weight: 900; letter-spacing: 0.1em; }
+        p, li { letter-spacing: 0.025em; }
+        .content-scroll { overflow-y: auto; height: 85vh; padding-right: 20px; }
+        .content-scroll::-webkit-scrollbar { display: none; }
     </style>
 </head>
-<body class="p-10 md:p-24 bg-black">
+<body class="p-12">
 
-    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-20">
-        
-        <nav class="lg:col-span-3 space-y-12 sticky top-24 h-full">
-            <h1 class="text-3xl font-black tracking-tighter uppercase">Sonrisa Watts</h1>
-            <ul class="space-y-6">
-                <li><a href="#" class="text-[10px] tracking-[0.4em] uppercase opacity-60 hover:opacity-100 transition-all">Portfolio</a></li>
-                <li><a href="#" class="text-[10px] tracking-[0.4em] uppercase opacity-60 hover:opacity-100 transition-all">Pictures of Me</a></li>
-                <li><a href="#" class="text-[10px] tracking-[0.4em] uppercase opacity-60 hover:opacity-100 transition-all">Accomplishments</a></li>
+    <div class="max-w-screen-2xl mx-auto grid grid-cols-12 gap-16 h-full items-center">
+        <nav class="col-span-3 space-y-12">
+            <h1 class="text-3xl uppercase">Sonrisa Watts</h1>
+            <ul class="space-y-8">
+                <li><a href="#" class="text-[10px] tracking-[0.3em] uppercase opacity-60">Portfolio</a></li>
+                <li><a href="#" class="text-[10px] tracking-[0.3em] uppercase opacity-60">Pictures of Me</a></li>
+                <li><a href="#" class="text-[10px] tracking-[0.3em] uppercase opacity-60">Accomplishments</a></li>
             </ul>
         </nav>
 
-        <main class="lg:col-span-9 space-y-24">
-            
-            <section>
-                <h2 class="section-title">Pictures of Me</h2>
-                <div class="flex gap-8 overflow-x-auto pb-8">
-                    <div class="glass-box w-80 h-96 flex-shrink-0 border border-white/10"></div>
-                    <div class="glass-box w-80 h-96 flex-shrink-0 border border-white/10"></div>
-                    <div class="glass-box w-80 h-96 flex-shrink-0 border border-white/10"></div>
+        <main class="col-span-9 content-scroll">
+            <section class="space-y-24 pb-24">
+                <div>
+                    <h2 class="text-[9px] uppercase tracking-[0.8em] text-zinc-500 mb-10">Pictures of Me</h2>
+                    <div class="flex gap-8">
+                        <div class="gallery-frame w-72 h-80"></div>
+                        <div class="gallery-frame w-72 h-80"></div>
+                        <div class="gallery-frame w-72 h-80"></div>
+                    </div>
                 </div>
-            </section>
 
-            <section>
-                <h2 class="section-title">Accomplishments</h2>
-                <div class="glass-luxury p-12 md:p-16 space-y-16">
-                    
-                    <div class="text-center pb-12 border-b border-white/10">
-                        <h2 class="text-3xl font-bold tracking-tight">What I accomplished at age 24-25 in under 9 months!</h2>
-                        <p class="text-white font-bold uppercase tracking-[0.5em] text-[11px] mt-4">From my tiny 48,000 population Caribbean island</p>
+                <div class="glass-luxury p-12 space-y-12">
+                    <div class="text-center border-b border-white/10 pb-8">
+                        <h2 class="text-2xl tracking-tight">What I accomplished at age 24-25 in under 9 months!</h2>
+                        <!-- Bold and big as requested -->
+                        <p class="text-white font-black uppercase tracking-[0.2em] text-2xl mt-4">From my tiny 48,000 population Caribbean island</p>
                     </div>
 
-                    <!-- Map with Native Color -->
-                    <div class="glass-box p-3 h-80 overflow-hidden">
-                        <iframe class="w-full h-full rounded-[25px]" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d122557.7330752538!2d-62.77595568019488!3d17.291757303038318!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8c0d90823c03565f%3A0x88283a373b50a221!2sSaint%20Kitts%20and%20Nevis!5e0!3m2!1sen!2s!4v1717546468482!5m2!1sen!2s" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    <div class="glass-3d h-64">
+                        <div class="map-frame w-full h-full overflow-hidden rounded-[30px]">
+                            <iframe class="w-full h-full" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d30560.8!2d-62.7!3d17.3!2m3!1f0!2f45!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2sus!4v1" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
                     </div>
 
                     <div class="space-y-16 text-zinc-300">
                         <div>
-                            <h3 class="text-xl font-bold uppercase tracking-widest text-white mb-4">Emotion Encoded</h3>
+                            <h3 class="text-xl uppercase text-white mb-6">Emotion Encoded</h3>
                             <p class="text-[11px] uppercase text-zinc-400 tracking-[0.2em] mb-8">Independent Research Initiative- Emotion Encoded | Founder & Principal Researcher | June 2025- Present | St.Kitts & Nevis</p>
                             <ul class="space-y-6 leading-relaxed list-disc ml-6 text-sm">
                                 <li>Independently conceptualized , designed and executed mixed-methods studies (N≈133+) investigating how emotional reasoning, heuristics, metacognition, and cognitive bias drive psychological resistance to Artificial Intelligence in high-stakes fields (medicine, law, finance) in the Caribbean. Findings from logistic regression modeling(Python, using pandas, matplotlib, seaborn) revealed agency bias, metacognitive dissonance & affective heuristics as dominant predictors of AI trust (OR=2.96, trend-level significance).</li>
@@ -90,7 +77,7 @@
                         </div>
 
                         <div class="border-t border-white/10 pt-16">
-                            <h3 class="text-xl font-bold uppercase tracking-widest text-white mb-4">Stanford Medicine x Emotion Encoded</h3>
+                            <h3 class="text-xl uppercase text-white mb-6">Stanford Medicine x Emotion Encoded</h3>
                             <p class="text-[11px] uppercase text-zinc-400 tracking-[0.2em] mb-8">Stanford University -School of Medicine | Global Health Innovation | Research Collaborative Partnership & Co Author | March 2026 – Present</p>
                             <img src="images/Emotion_Encoded x_Stanford _University_Collaboration.jpg" alt="Collaboration" class="rounded-[30px] w-full border border-white/10 shadow-2xl mb-12">
                             <ul class="space-y-6 leading-relaxed list-disc ml-6 text-sm">
