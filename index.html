@@ -4,23 +4,26 @@
     <meta charset="UTF-8">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body { background-color: #000; color: #fff; font-family: 'Inter', sans-serif; }
-        
-        /* THE ELITE LUXURY GLASS LAYER */
-        .elite-glass {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(40px);
-            -webkit-backdrop-filter: blur(40px);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            border-radius: 40px;
-            padding: 60px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.9);
+        body { 
+            background: #000; 
+            color: #fff; 
+            font-family: 'Inter', sans-serif; 
         }
 
-        /* TRANSPARENT PHOTO BOXES */
+        /* Deep Frosted Glass Layer */
+        .glass-luxury {
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(50px);
+            -webkit-backdrop-filter: blur(50px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+        }
+
+        /* Glass Gallery Container */
         .glass-box {
             background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(20px);
+            backdrop-filter: blur(25px);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 30px;
         }
@@ -28,74 +31,73 @@
         .section-title {
             letter-spacing: 0.8em;
             text-transform: uppercase;
-            font-size: 10px;
-            color: rgba(255, 255, 255, 0.7);
-            margin-bottom: 4rem;
+            font-size: 9px;
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 3rem;
         }
     </style>
 </head>
-<body class="p-8 md:p-24">
+<body class="p-10 md:p-24 bg-black">
 
     <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-20">
         
         <nav class="lg:col-span-3 space-y-12 sticky top-24 h-full">
-            <h1 class="text-4xl font-black tracking-tighter uppercase">Sonrisa Watts</h1>
+            <h1 class="text-3xl font-black tracking-tighter uppercase">Sonrisa Watts</h1>
             <ul class="space-y-6">
-                <li><a href="#" class="text-[10px] tracking-[0.4em] uppercase opacity-70 hover:opacity-100 transition-all">Portfolio</a></li>
-                <li><a href="#" class="text-[10px] tracking-[0.4em] uppercase opacity-70 hover:opacity-100 transition-all">Pictures of Me</a></li>
-                <li><a href="#" class="text-[10px] tracking-[0.4em] uppercase opacity-70 hover:opacity-100 transition-all">Accomplishments</a></li>
+                <li><a href="#" class="text-[10px] tracking-[0.4em] uppercase opacity-60 hover:opacity-100 transition-all">Portfolio</a></li>
+                <li><a href="#" class="text-[10px] tracking-[0.4em] uppercase opacity-60 hover:opacity-100 transition-all">Pictures of Me</a></li>
+                <li><a href="#" class="text-[10px] tracking-[0.4em] uppercase opacity-60 hover:opacity-100 transition-all">Accomplishments</a></li>
             </ul>
         </nav>
 
-        <main class="lg:col-span-9 space-y-32">
+        <main class="lg:col-span-9 space-y-24">
             
             <section>
                 <h2 class="section-title">Pictures of Me</h2>
                 <div class="flex gap-8 overflow-x-auto pb-8">
-                    <div class="glass-box w-80 h-96 flex-shrink-0 border border-white/10 shadow-2xl"></div>
-                    <div class="glass-box w-80 h-96 flex-shrink-0 border border-white/10 shadow-2xl"></div>
-                    <div class="glass-box w-80 h-96 flex-shrink-0 border border-white/10 shadow-2xl"></div>
+                    <div class="glass-box w-80 h-96 flex-shrink-0 border border-white/10"></div>
+                    <div class="glass-box w-80 h-96 flex-shrink-0 border border-white/10"></div>
+                    <div class="glass-box w-80 h-96 flex-shrink-0 border border-white/10"></div>
                 </div>
             </section>
 
             <section>
                 <h2 class="section-title">Accomplishments</h2>
-                
-                <div class="elite-glass space-y-20">
+                <div class="glass-luxury p-12 md:p-16 space-y-16">
+                    
                     <div class="text-center pb-12 border-b border-white/10">
                         <h2 class="text-3xl font-bold tracking-tight">What I accomplished at age 24-25 in under 9 months!</h2>
-                        <p class="text-white font-bold uppercase tracking-[0.5em] text-[11px] mt-6">From my tiny 48,000 population Caribbean island</p>
+                        <p class="text-white font-bold uppercase tracking-[0.5em] text-[11px] mt-4">From my tiny 48,000 population Caribbean island</p>
                     </div>
 
-                    <div class="glass-box p-3 h-80 overflow-hidden shadow-2xl">
+                    <!-- Map with Native Color -->
+                    <div class="glass-box p-3 h-80 overflow-hidden">
                         <iframe class="w-full h-full rounded-[25px]" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d122557.7330752538!2d-62.77595568019488!3d17.291757303038318!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8c0d90823c03565f%3A0x88283a373b50a221!2sSaint%20Kitts%20and%20Nevis!5e0!3m2!1sen!2s!4v1717546468482!5m2!1sen!2s" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                     </div>
 
                     <div class="space-y-16 text-zinc-300">
-                        <!-- Emotion Encoded Section -->
                         <div>
-                            <h3 class="text-lg font-bold uppercase tracking-widest text-white mb-4">Emotion Encoded</h3>
+                            <h3 class="text-xl font-bold uppercase tracking-widest text-white mb-4">Emotion Encoded</h3>
                             <p class="text-[11px] uppercase text-zinc-400 tracking-[0.2em] mb-8">Independent Research Initiative- Emotion Encoded | Founder & Principal Researcher | June 2025- Present | St.Kitts & Nevis</p>
-                            <ul class="space-y-6 leading-relaxed list-disc ml-6">
+                            <ul class="space-y-6 leading-relaxed list-disc ml-6 text-sm">
                                 <li>Independently conceptualized , designed and executed mixed-methods studies (N≈133+) investigating how emotional reasoning, heuristics, metacognition, and cognitive bias drive psychological resistance to Artificial Intelligence in high-stakes fields (medicine, law, finance) in the Caribbean. Findings from logistic regression modeling(Python, using pandas, matplotlib, seaborn) revealed agency bias, metacognitive dissonance & affective heuristics as dominant predictors of AI trust (OR=2.96, trend-level significance).</li>
                                 <li>Research findings were formally cited in a Ministry of Education national policy proposal on digital literacy and AI ethics, potentially impacting over 3,000 students.</li>
                                 <li>Secured $700 USD in initial microgrant funding to establish an AI Tools Micro-Grant Program, equipping entrepreneurs with ethical AI access and support.</li>
-                                <li>Conducted an extensive professional interview series (N≈40+), performing thematic and semantic analyses of experts, including a biomedical engineering professor of Johns Hopkins University, physicians in internal medicine, oncologists, radiologists, surgeons, cardiologists, founders of tele-health and behavioural science startups, attorneys-at-law, and psychologists in Caribbean region to identify conditional acceptance, accountability ambiguity, and perceived threat to expertise as core cognitive-emotional barriers to professional AI adoption</li>
+                                <li>Conducted an extensive professional interview series (N≈40+), performing thematic and semantic analyses of experts, including a biomedical engineering professor of Johns Hopkins University, physicians in internal medicine, oncologists, radiologists, surgeons, cardiologists, founders of tele-health and behavioural science startups, attorneys-at-law, and psychologists in Caribbean region to identify conditional acceptance, accountability ambiguity, and perceived threat to expertise as core cognitive-emotional barriers to professional AI adoption.</li>
                                 <li>Preprint on PsyArXiv: Independent research paper, "The Cognitive Foundations of Algorithmic Trust: Human Reasoning in High-Stakes AI Systems," accepted and available on the psychology preprint server.</li>
                                 <li>Authored and published 40 + open-access briefs (e.g., “AI Therapists vs. Financial Advisors: Cognitive-Emotional Divides in Trust”) on website fostering public literacy on decoding emotional barriers to AI adoption.</li>
                             </ul>
                         </div>
 
-                        <!-- Stanford Section -->
                         <div class="border-t border-white/10 pt-16">
-                            <h3 class="text-lg font-bold uppercase tracking-widest text-white mb-4">Stanford Medicine x Emotion Encoded</h3>
+                            <h3 class="text-xl font-bold uppercase tracking-widest text-white mb-4">Stanford Medicine x Emotion Encoded</h3>
                             <p class="text-[11px] uppercase text-zinc-400 tracking-[0.2em] mb-8">Stanford University -School of Medicine | Global Health Innovation | Research Collaborative Partnership & Co Author | March 2026 – Present</p>
                             <img src="images/Emotion_Encoded x_Stanford _University_Collaboration.jpg" alt="Collaboration" class="rounded-[30px] w-full border border-white/10 shadow-2xl mb-12">
-                            <ul class="space-y-6 leading-relaxed list-disc ml-6">
-                                <li>Invited by Stanford School of Medicine to incorporate Emotion Encoded’s proprietary Caribbean physician insights into Stanford’s Global AI Implementation Curriculum on clinicians using AI , having been formally requested by faculty , filling a critical regional data gap</li>
+                            <ul class="space-y-6 leading-relaxed list-disc ml-6 text-sm">
+                                <li>Invited by Stanford School of Medicine to incorporate Emotion Encoded’s proprietary Caribbean physician insights into Stanford’s Global AI Implementation Curriculum on clinicians using AI , having been formally requested by faculty , filling a critical regional data gap.</li>
                                 <li>Collaborative Partnership: facilitating the integration and adoption of Emotion Encoded’s research findings into the curriculum to establish a permanent case study for AI implementation, which will be promoted to different medical institutions and faculties and ministries of health.</li>
                                 <li>Providing localized qualitative datasets and thematic analyses to architect frameworks for calibrating human-AI trust among medical specialists, translating regional data into scalable insights for clinical automation and global health delivery within resource-constrained environments.</li>
-                                <li>Co-authoring a first-author peer-reviewed manuscript with (Stanford Faculty) on Caribbean physician perspectives on clinical AI trust</li>
+                                <li>Co-authoring a first-author peer-reviewed manuscript with (Stanford Faculty) on Caribbean physician perspectives on clinical AI trust.</li>
                             </ul>
                         </div>
                     </div>
@@ -104,3 +106,4 @@
         </main>
     </div>
 </body>
+</html>
