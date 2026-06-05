@@ -34,6 +34,20 @@
             padding: 40px;
         }
         h1, h2, h3 { font-weight: 900; letter-spacing: 0.15em; text-transform: uppercase; }
+        /* Smooth fade-in for lists */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-in {
+    animation: fadeIn 1s ease-out forwards;
+}
+
+/* Image luxury hover glow */
+.group:hover img {
+    filter: brightness(1.1);
+}
     </style>
 </head>
 
@@ -103,6 +117,21 @@
                         </div>
 
                         <div class="border-t border-white/5 pt-16">
+    <h3 class="text-xl text-white mb-6">Stanford Medicine x Emotion Encoded</h3>
+    <p class="text-[10px] uppercase text-zinc-500 tracking-[0.2em] mb-8">
+        Stanford University School of Medicine | Global Health Innovation | Research Collaborative Partnership & Co Author | March 2026 – Present
+    </p>
+
+    <div class="relative group overflow-hidden rounded-[30px] mb-8 shadow-2xl border border-white/10">
+        <div class="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+        <img 
+            src="images/Emotion_Encoded x_Stanford _University_Collaboration.jpg" 
+            alt="Stanford Collaboration" 
+            class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-[2000ms] ease-out"
+        >
+    </div>
+
+                        <div class="border-t border-white/5 pt-16">
                             <h3 class="text-xl text-white mb-6">Stanford Medicine x Emotion Encoded</h3>
                             <p class="text-[10px] uppercase text-zinc-500 tracking-[0.2em] mb-8">Stanford University School of Medicine | Global Health Innovation | Research Collaborative Partnership & Co Author | March 2026 – Present</p>
                             <div class="h-64 bg-zinc-800 rounded-[30px] mb-8"></div>
@@ -115,6 +144,10 @@
                         </div>
                     </div>
                 </div>
+
+
+
+                
             </section>
         </main>
     </div>
