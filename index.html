@@ -29,22 +29,22 @@
 
         .gallery-frame:hover { border-color: rgba(255,255,255,0.3); box-shadow: 0 0 30px rgba(255,255,255,0.05); }
 
-        /* Modernized Scrollbar */
+        /* Luxurious Minimalist Scrollbar */
         .content-scroll { 
             overflow-y: auto; 
             height: 100vh; 
-            padding-right: 2rem;
+            padding-right: 1.5rem;
             scrollbar-width: thin;
-            scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+            scrollbar-color: rgba(255, 255, 255, 0.1) transparent;
         }
 
-        .content-scroll::-webkit-scrollbar { width: 4px; }
+        .content-scroll::-webkit-scrollbar { width: 3px; }
         .content-scroll::-webkit-scrollbar-track { background: transparent; }
         .content-scroll::-webkit-scrollbar-thumb {
-            background: rgba(255, 255, 255, 0.2);
+            background: linear-gradient(180deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0.05) 100%);
             border-radius: 10px;
         }
-        .content-scroll::-webkit-scrollbar-thumb:hover { background: rgba(255, 255, 255, 0.5); }
+        .content-scroll::-webkit-scrollbar-thumb:hover { background: rgba(255, 255, 255, 0.4); }
 
         .research-card {
             background: linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%);
@@ -96,7 +96,7 @@
                     <h2 class="text-3xl mb-6 tracking-tight reveal-text">What I Accomplished At Age 24-25</h2>
                     
                     <p class="text-zinc-400 text-sm max-w-2xl mx-auto font-light leading-relaxed tracking-widest uppercase">
-                       I was born and raised in the tiny twin-island nation of St. Kitts and Nevis of just 48,000 people. This is also where I conducted my independent research and achieved these accomplishments
+                        I was born and raised in the tiny twin-island nation of St. Kitts and Nevis of just 48,000 people. This is also where I conducted my independent research and achieved these accomplishments.
                     </p>
                 </div>
 
@@ -126,9 +126,8 @@
                             Stanford University School of Medicine | Global Health Innovation | Research Collaborative
                         </p>
 
-                        <div class="relative group overflow-hidden rounded-[30px] mb-8 shadow-2xl border border-white/10 h-80 tech-glow">
-                            <div class="absolute inset-0 bg-gradient-to-tr from-black/40 to-transparent z-10"></div>
-                            <img src="images/Emotion_Encoded x_Stanford _University_Collaboration.jpg" alt="Stanford Collaboration" class="w-full h-full object-cover">
+                        <div class="relative group rounded-[30px] mb-8 shadow-2xl border border-white/10 tech-glow">
+                            <img src="images/Emotion_Encoded x_Stanford _University_Collaboration.jpg" alt="Stanford Collaboration" class="w-full h-auto max-h-[70vh] object-contain rounded-[30px]">
                         </div>
 
                         <ul class="space-y-4 text-zinc-400 text-sm pl-4">
