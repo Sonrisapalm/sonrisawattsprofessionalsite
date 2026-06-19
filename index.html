@@ -15,73 +15,49 @@
             overflow: hidden;
         }
 
-        .glass-luxury {
-            background: rgba(255,255,255,.03);
-            backdrop-filter: blur(40px);
-            border: 1px solid rgba(255,255,255,.08);
-            border-radius: 40px;
-        }
-
-        .gallery-frame {
-            background: rgba(255,255,255,.03);
-            border: 1px solid rgba(255,255,255,.1);
-            border-radius: 24px;
-            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .gallery-frame:hover { transform: translateY(-10px); border-color: rgba(255,255,255,0.2); }
-
+        /* Luxury Scrollbar */
         .content-scroll { 
             overflow-y: auto; 
             height: 100vh; 
             padding-right: 20px; 
             scrollbar-width: thin;
+            scrollbar-color: #444 #0a0a0a;
         }
-
-        /* Luxury Scrollbar Styling */
-        .content-scroll::-webkit-scrollbar { width: 10px; }
-        .content-scroll::-webkit-scrollbar-track { background: #0a0a0a; }
+        .content-scroll::-webkit-scrollbar { width: 8px; }
+        .content-scroll::-webkit-scrollbar-track { background: rgba(0,0,0,0.5); }
         .content-scroll::-webkit-scrollbar-thumb {
-            background: linear-gradient(to bottom, #222, #444);
-            border-radius: 5px;
-            border: 2px solid #020202;
-            transition: all 0.3s ease;
+            background: linear-gradient(180deg, #333, #111);
+            border-radius: 10px;
+            border: 1px solid #444;
         }
-        .content-scroll::-webkit-scrollbar-thumb:hover {
-            background: linear-gradient(to bottom, #444, #666);
-            box-shadow: 0 0 10px rgba(255,255,255,0.2);
+        .content-scroll::-webkit-scrollbar-thumb:hover { background: #555; box-shadow: 0 0 10px rgba(255,255,255,0.2); }
+
+        .glass-luxury {
+            background: rgba(255,255,255,.03);
+            backdrop-filter: blur(40px);
+            border: 1px solid rgba(255,255,255,.08);
+            border-radius: 40px;
+            transition: all 0.4s ease;
         }
 
         .research-card {
             background: rgba(255,255,255,.02);
-            border: 1px solid rgba(255,255,255,.05);
+            border: 1px solid rgba(255,255,255,.1);
             border-radius: 30px;
             padding: 40px;
+            box-shadow: 0 0 15px rgba(255,255,255,0.03);
         }
+
+        /* Neon Glow Animations */
+        @keyframes neon-pulse {
+            0%, 100% { box-shadow: 0 0 5px rgba(255,255,255,0.1), inset 0 0 5px rgba(255,255,255,0.05); }
+            50% { box-shadow: 0 0 20px rgba(255,255,255,0.2), inset 0 0 10px rgba(255,255,255,0.1); }
+        }
+        .neon-glow { animation: neon-pulse 3s infinite ease-in-out; }
 
         h1, h2, h3 { font-weight: 900; letter-spacing: 0.15em; text-transform: uppercase; }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Tech-Luxury Animations */
-        @keyframes pulse-glow {
-            0%, 100% { border-color: rgba(255,255,255,0.1); }
-            50% { border-color: rgba(255,255,255,0.3); }
-        }
-        .tech-glow { animation: pulse-glow 3s infinite ease-in-out; }
-
-        @keyframes slideIn {
-            from { opacity: 0; transform: translateX(-20px); }
-            to { opacity: 1; transform: translateX(0); }
-        }
         .reveal-text { animation: slideIn 0.8s ease-out forwards; }
-
-        .animate-in { animation: fadeIn 1s ease-out forwards; }
-
-        .group:hover img { filter: brightness(1.1); }
+        @keyframes slideIn { from { opacity: 0; transform: translateX(-20px); } to { opacity: 1; transform: translateX(0); } }
     </style>
 </head>
 
@@ -103,31 +79,30 @@
                 <div>
                     <h2 class="text-[8px] uppercase tracking-[0.6em] text-zinc-500 mb-10 reveal-text">Pictures of Me</h2>
                     <div class="flex gap-6">
-                        <div class="gallery-frame w-64 h-72"></div>
-                        <div class="gallery-frame w-64 h-72"></div>
-                        <div class="gallery-frame w-64 h-72"></div>
+                        <div class="glass-luxury w-64 h-72 hover:scale-105 transition-transform"></div>
+                        <div class="glass-luxury w-64 h-72 hover:scale-105 transition-transform"></div>
+                        <div class="glass-luxury w-64 h-72 hover:scale-105 transition-transform"></div>
                     </div>
                 </div>
 
-                <div class="text-center border-b border-white/5 pb-12">
-                    <div class="inline-flex items-center gap-3 px-6 py-2 rounded-full bg-white/5 border border-white/10 mb-8">
-                        <div class="w-1.5 h-1.5 rounded-full bg-white"></div>
-                        <span class="text-[9px] uppercase tracking-[0.3em]">Accomplishments</span>
+                <div class="grid grid-cols-2 gap-12 items-center border-b border-white/5 pb-12">
+                    <div>
+                        <div class="inline-flex items-center gap-3 px-6 py-2 rounded-full bg-white/5 border border-white/10 mb-8">
+                            <div class="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></div>
+                            <span class="text-[9px] uppercase tracking-[0.3em]">Accomplishments</span>
+                        </div>
+                        <h2 class="text-3xl mb-6 reveal-text">What I Accomplished At Age 24-25</h2>
+                        <p class="text-zinc-400 text-sm font-light leading-relaxed tracking-widest uppercase">
+                          I was born and raised on a tiny Caribbean twin island of just 48,000 people. This is also where I achieved my accomplishments.
+                        </p>
                     </div>
-                    
-                    <h2 class="text-3xl mb-6 reveal-text">What I Accomplished At Age 24-25</h2>
-                    
-                    <p class="text-zinc-400 text-sm max-w-2xl mx-auto font-light leading-relaxed tracking-widest uppercase">
-                        I was born and raised on a tiny Caribbean twin island of just 48,000 people. This is also where I achieved my accomplishments.
-                    </p>
-                </div>
-
-                <div class="h-64 rounded-[30px] overflow-hidden border border-white/10 tech-glow">
-                    <iframe class="w-full h-full grayscale opacity-70" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d80000.0!2d-62.7!3d17.3!2m3!1f0!2f45!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2sus!4v1" allowfullscreen="" loading="lazy"></iframe>
+                    <div class="h-64 rounded-[30px] overflow-hidden border border-white/10 neon-glow">
+                        <iframe class="w-full h-full grayscale opacity-70" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d80000.0!2d-62.7!3d17.3!2m3!1f0!2f45!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2sus!4v1&z=10" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
                 </div>
 
                 <div class="space-y-16">
-                    <div class="research-card tech-glow">
+                    <div class="research-card neon-glow">
                         <div class="flex items-start justify-between mb-8">
                             <div>
                                 <h3 class="text-2xl text-white">Emotion Encoded</h3>
@@ -150,14 +125,9 @@
                         <p class="text-[10px] uppercase text-zinc-500 tracking-[0.2em] mb-8">
                             Stanford University School of Medicine | Global Health Innovation | Research Collaborative Partnership & Co Author | March 2026 – Present
                         </p>
-
-                        <div class="relative group overflow-hidden rounded-[30px] mb-8 shadow-2xl border border-white/10 h-80 tech-glow">
-                            <div class="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                            <img src="images/Emotion_Encoded x_Stanford _University_Collaboration.jpg" 
-                                 alt="Stanford Collaboration" 
-                                 class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-[2000ms] ease-out">
+                        <div class="relative group overflow-hidden rounded-[30px] mb-8 shadow-2xl border border-white/10 h-80 neon-glow">
+                            <img src="images/Emotion_Encoded_x_Stanford_University_Collaboration.jpg" alt="Stanford Collaboration" class="w-full h-full object-cover transition-transform duration-[2000ms] group-hover:scale-105">
                         </div>
-
                         <ul class="space-y-4 text-zinc-300 text-sm list-disc pl-4 animate-in fade-in duration-1000">
                             <li>Invited by Stanford School of Medicine to incorporate Emotion Encoded’s proprietary Caribbean physician insights into Stanford’s Global AI Implementation Curriculum on clinicians using AI, having been formally requested by faculty, filling a critical regional data gap.</li>
                             <li>Collaborative Partnership: facilitating the integration and adoption of Emotion Encoded’s research findings into the curriculum to establish a permanent case study for AI implementation.</li>
@@ -168,15 +138,14 @@
 
                     <div class="flex flex-col gap-6 mt-12 animate-in fade-in duration-1000 delay-500">
                         <div class="flex flex-col gap-4">
-                            <a href="#" class="glass-luxury group px-10 py-5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md transition-all duration-500 hover:bg-white/10 hover:border-white/30 flex flex-col items-center">
+                            <a href="#" class="glass-luxury px-10 py-5 rounded-full border border-white/10 hover:bg-white/10 flex flex-col items-center">
                                 <span class="text-[10px] uppercase tracking-[0.3em] text-white font-medium">View Curriculum</span>
                             </a>
-                            <div class="w-full h-48 border border-dashed border-white/20 rounded-[20px] flex items-center justify-center bg-white/[0.01] hover:bg-white/[0.03] transition-colors">
+                            <div class="w-full h-48 border border-dashed border-white/20 rounded-[20px] flex items-center justify-center bg-white/[0.01]">
                                 <span class="text-[8px] uppercase tracking-[0.2em] text-zinc-600">Curriculum Preview Pending</span>
                             </div>
                         </div>
-
-                        <a href="#" class="glass-luxury group px-10 py-5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md transition-all duration-500 hover:bg-white/10 hover:border-white/30 flex flex-col items-center">
+                        <a href="#" class="glass-luxury px-10 py-5 rounded-full border border-white/10 hover:bg-white/10 flex flex-col items-center">
                             <span class="text-[10px] uppercase tracking-[0.3em] text-white font-medium">View Manuscript</span>
                         </a>
                     </div>
