@@ -15,7 +15,6 @@
             overflow: hidden;
         }
 
-        /* Luxury Scrollbar */
         .content-scroll { 
             overflow-y: auto; 
             height: 100vh; 
@@ -46,9 +45,9 @@
             border-radius: 30px;
             padding: 40px;
             box-shadow: 0 0 15px rgba(255,255,255,0.03);
+            height: 100%;
         }
 
-        /* Neon Glow Animations */
         @keyframes neon-pulse {
             0%, 100% { box-shadow: 0 0 5px rgba(255,255,255,0.1), inset 0 0 5px rgba(255,255,255,0.05); }
             50% { box-shadow: 0 0 20px rgba(255,255,255,0.2), inset 0 0 10px rgba(255,255,255,0.1); }
@@ -93,7 +92,7 @@
                         </div>
                         <h2 class="text-3xl mb-6 reveal-text">What I Accomplished At Age 24-25</h2>
                         <p class="text-zinc-400 text-sm font-light leading-relaxed tracking-widest uppercase">
-                          I was born and raised on a tiny Caribbean twin island of just 48,000 people. This is also where I achieved my accomplishments.
+                            I was born and raised on a tiny Caribbean twin island of just 48,000 people. This is also where I achieved my accomplishments.
                         </p>
                     </div>
                     <div class="h-64 rounded-[30px] overflow-hidden border border-white/10 neon-glow">
@@ -101,53 +100,44 @@
                     </div>
                 </div>
 
-                <div class="space-y-16">
-                    <div class="research-card neon-glow">
+                <div class="grid grid-cols-2 gap-8 items-start">
+                    
+                    <div class="research-card neon-glow flex flex-col h-full">
                         <div class="flex items-start justify-between mb-8">
                             <div>
                                 <h3 class="text-2xl text-white">Emotion Encoded</h3>
                                 <p class="text-[10px] uppercase text-zinc-500 tracking-[0.2em] mt-2">Independent Research Initiative • Founder & Principal Researcher • June 2025 – Present • St. Kitts & Nevis</p>
                             </div>
-                            <a href="https://encodedemotion.org" target="_blank" class="text-[9px] uppercase tracking-[0.2em] border border-white/10 px-6 py-3 rounded-full hover:bg-white/5 transition">encodedemotion.org</a>
                         </div>
-                        <ul class="space-y-4 text-zinc-300 text-sm list-disc pl-4">
-                            <li>Independently conceptualized, designed, and executed mixed-methods studies (N≈133+) investigating how emotional reasoning, heuristics, metacognition, and cognitive bias drive psychological resistance to Artificial Intelligence in high-stakes fields (medicine, law, finance) in the Caribbean. Findings from logistic regression modeling (Python, using pandas, matplotlib, seaborn) revealed agency bias, metacognitive dissonance, and affective heuristics as dominant predictors of AI trust (OR=2.96, trend-level significance).</li>
+                        <a href="https://encodedemotion.org" target="_blank" class="text-[9px] uppercase tracking-[0.2em] border border-white/10 px-6 py-3 rounded-full hover:bg-white/5 transition mb-6 block text-center">encodedemotion.org</a>
+                        <ul class="space-y-4 text-zinc-300 text-sm list-disc pl-4 flex-grow">
+                            <li>Independently conceptualized, designed, and executed mixed-methods studies (N≈133+) investigating how emotional reasoning, heuristics, metacognition, and cognitive bias drive psychological resistance to Artificial Intelligence.</li>
+                            <li>Findings from logistic regression modeling (Python, using pandas, matplotlib, seaborn) revealed agency bias and affective heuristics as dominant predictors of AI trust.</li>
                             <li>Research findings were formally cited in a Ministry of Education national policy proposal on digital literacy and AI ethics, potentially impacting over 3,000 students.</li>
-                            <li>Secured $700 USD in initial microgrant funding to establish an AI Tools Micro-Grant Program, equipping entrepreneurs with ethical AI access and support.</li>
-                            <li>Conducted an extensive professional interview series (N≈40+), performing thematic and semantic analyses of experts, including surgeons, anesthesiologists, oncologists, radiologists, cardiologists, founders of tele-health and behavioural science startups, physicians in internal medicine, attorneys-at-law, a biomedical engineering professor of Johns Hopkins University, and psychologists in Caribbean region to identify conditional acceptance, accountability ambiguity, and perceived threat to expertise as core cognitive-emotional barriers to professional AI adoption.</li>
-                            <li>Preprint on PsyArXiv: Independent research paper, "The Cognitive Foundations of Algorithmic Trust: Human Reasoning in High-Stakes AI Systems," accepted and available on the psychology preprint server.</li>
-                            <li>Authored and published 40+ open-access briefs (e.g., “AI Therapists vs. Financial Advisors: Cognitive-Emotional Divides in Trust”) on website fostering public literacy on decoding emotional barriers to AI adoption.</li>
+                            <li>Secured $700 USD in initial microgrant funding to establish an AI Tools Micro-Grant Program.</li>
                         </ul>
                     </div>
 
-                    <div class="border-t border-white/5 pt-16">
-                        <h3 class="text-xl text-white mb-6 reveal-text">Stanford Medicine x Emotion Encoded</h3>
-                        <p class="text-[10px] uppercase text-zinc-500 tracking-[0.2em] mb-8">
-                            Stanford University School of Medicine | Global Health Innovation | Research Collaborative Partnership & Co Author | March 2026 – Present
-                        </p>
-                        <div class="relative group overflow-hidden rounded-[30px] mb-8 shadow-2xl border border-white/10 h-80 neon-glow">
-                            <img src="images/Emotion_Encoded x_Stanford _University_Collaboration.jpg" alt="Stanford Collaboration" class="w-full h-full object-cover transition-transform duration-[2000ms] group-hover:scale-105">
+                    <div class="research-card neon-glow flex flex-col h-full">
+                        <div class="mb-8">
+                            <h3 class="text-2xl text-white">Stanford Medicine x Emotion Encoded</h3>
+                            <p class="text-[10px] uppercase text-zinc-500 tracking-[0.2em] mt-2">
+                                Stanford University School of Medicine | Global Health Innovation | Research Collaborative Partnership & Co Author | March 2026 – Present
+                            </p>
                         </div>
-                        <ul class="space-y-4 text-zinc-300 text-sm list-disc pl-4 animate-in fade-in duration-1000">
-                            <li>Invited by Stanford School of Medicine to incorporate Emotion Encoded’s proprietary Caribbean physician insights into Stanford’s Global AI Implementation Curriculum on clinicians using AI, having been formally requested by faculty, filling a critical regional data gap.</li>
-                            <li>Collaborative Partnership: facilitating the integration and adoption of Emotion Encoded’s research findings into the curriculum to establish a permanent case study for AI implementation, which will be promoted to different medical institutions and faculties and ministries of health. </li>
+                        <div class="relative group overflow-hidden rounded-[30px] mb-8 shadow-2xl border border-white/10 h-48">
+                            <img src="images/Emotion_Encoded_x_Stanford_University_Collaboration.jpg" alt="Stanford Collaboration" class="w-full h-full object-cover">
+                        </div>
+                        <ul class="space-y-4 text-zinc-300 text-sm list-disc pl-4 flex-grow">
+                            <li>Invited by Stanford School of Medicine to incorporate Emotion Encoded’s proprietary Caribbean physician insights into Stanford’s Global AI Implementation Curriculum.</li>
+                            <li>Facilitating the integration of research findings into the curriculum to establish a permanent case study for AI implementation.</li>
                             <li>Providing localized qualitative datasets and thematic analyses to architect frameworks for calibrating human-AI trust among medical specialists.</li>
                             <li>Co-authoring a first-author peer-reviewed manuscript with Stanford faculty on Caribbean physician perspectives on clinical AI trust.</li>
                         </ul>
-                    </div>
-
-                    <div class="flex flex-col gap-6 mt-12 animate-in fade-in duration-1000 delay-500">
-                        <div class="flex flex-col gap-4">
-                            <a href="#" class="glass-luxury px-10 py-5 rounded-full border border-white/10 hover:bg-white/10 flex flex-col items-center">
-                                <span class="text-[10px] uppercase tracking-[0.3em] text-white font-medium">View Curriculum</span>
-                            </a>
-                            <div class="w-full h-48 border border-dashed border-white/20 rounded-[20px] flex items-center justify-center bg-white/[0.01]">
-                                <span class="text-[8px] uppercase tracking-[0.2em] text-zinc-600">Curriculum Preview Pending</span>
-                            </div>
+                        <div class="mt-8 flex flex-col gap-4">
+                            <a href="#" class="text-[9px] uppercase tracking-[0.2em] border border-white/10 px-6 py-3 rounded-full hover:bg-white/5 transition text-center">View Curriculum</a>
+                            <a href="#" class="text-[9px] uppercase tracking-[0.2em] border border-white/10 px-6 py-3 rounded-full hover:bg-white/5 transition text-center">View Manuscript</a>
                         </div>
-                        <a href="#" class="glass-luxury px-10 py-5 rounded-full border border-white/10 hover:bg-white/10 flex flex-col items-center">
-                            <span class="text-[10px] uppercase tracking-[0.3em] text-white font-medium">View Manuscript</span>
-                        </a>
                     </div>
                 </div>
             </section>
