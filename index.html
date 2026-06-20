@@ -3,16 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;700;900&display=swap" rel="stylesheet">
     <style>
+        /* Particle Background Layer */
+        #tsparticles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: #020202;
+        }
+
         body {
-            background: radial-gradient(circle at 0% 0%, rgba(255,255,255,.05), transparent 40%),
-                        radial-gradient(circle at 100% 100%, rgba(255,255,255,.03), transparent 40%), #020202;
             color: #fff;
             font-family: 'Inter', sans-serif;
             height: 100vh;
             margin: 0;
             overflow: hidden;
+            background: transparent;
         }
 
         .content-scroll { 
@@ -49,7 +60,6 @@
             box-shadow: 0 0 25px rgba(255,255,255,0.03);
         }
 
-        /* Spacing and Glow effects */
         .spaced-list li { margin-bottom: 24px; line-height: 1.7; }
         
         @keyframes text-glow-pulse {
@@ -71,8 +81,9 @@
 </head>
 
 <body class="p-12">
+    <div id="tsparticles"></div>
+
     <div class="max-w-[1800px] mx-auto flex gap-16 h-full items-start">
-        
         <nav class="w-64 space-y-12 shrink-0">
             <h1 class="text-3xl">Sonrisa Watts</h1>
             <ul class="space-y-6">
@@ -84,7 +95,6 @@
 
         <main class="flex-grow content-scroll">
             <section class="space-y-32 py-24">
-                
                 <div>
                     <h2 class="text-[8px] uppercase tracking-[0.6em] text-zinc-500 mb-10 reveal-text">Pictures of Me</h2>
                     <div class="flex gap-8">
@@ -135,7 +145,7 @@
                             Stanford University School of Medicine | Global Health Innovation | Research Collaborative Partnership & Co Author | March 2026 – Present
                         </p>
                         <div class="relative group overflow-hidden rounded-[30px] mb-8 shadow-2xl border border-white/10 h-80 neon-glow">
-                            <img src="images/Emotion_Encoded x_Stanford _University_Collaboration.jpg" alt="Stanford Collaboration" class="w-full h-full object-cover transition-transform duration-[2000ms] group-hover:scale-105">
+                            <img src="images/Emotion_Encoded_x_Stanford_University_Collaboration.jpg" alt="Stanford Collaboration" class="w-full h-full object-cover transition-transform duration-[2000ms] group-hover:scale-105">
                         </div>
                         <ul class="spaced-list text-zinc-300 text-sm list-disc pl-4 animate-in fade-in duration-1000">
                             <li><span class="text-glow font-bold">Invited by Stanford School of Medicine to incorporate Emotion Encoded’s proprietary Caribbean physician insights into Stanford’s Global AI Implementation Curriculum on clinicians using AI,</span> having been formally requested by faculty, filling a critical regional data gap.</li>
@@ -159,5 +169,42 @@
             </section>
         </main>
     </div>
+
+    <script>
+        tsParticles.load("tsparticles", {
+            particles: {
+                number: { value: 60, density: { enable: true, value_area: 800 } },
+                color: { value: "#ffffff" },
+                shape: { type: "circle" },
+                opacity: { value: 0.3, random: true },
+                size: { value: 2, random: true },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: "#ffffff",
+                    opacity: 0.2,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 1,
+                    direction: "none",
+                    random: true,
+                    out_mode: "out"
+                }
+            },
+            interactivity: {
+                detect_on: "window",
+                events: {
+                    onhover: { enable: true, mode: "grab" },
+                    onclick: { enable: true, mode: "push" }
+                },
+                modes: {
+                    grab: { distance: 200, line_linked: { opacity: 0.5 } }
+                }
+            },
+            retina_detect: true
+        });
+    </script>
 </body>
 </html>
