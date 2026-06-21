@@ -21,16 +21,16 @@
         body {
             color: #fff;
             font-family: 'Inter', sans-serif;
-            min-height: 100vh;
+            height: 100vh;
             margin: 0;
-            overflow-x: hidden;
+            overflow: hidden; 
             background: transparent;
         }
 
         .content-scroll { 
             overflow-y: auto; 
             height: 100vh; 
-            padding-right: 40px; 
+            padding-right: 20px; 
             scrollbar-width: thin;
             scrollbar-color: #444 #0a0a0a;
         }
@@ -44,21 +44,21 @@
         .content-scroll::-webkit-scrollbar-thumb:hover { background: #555; box-shadow: 0 0 10px rgba(255,255,255,0.2); }
 
         .glass-luxury {
-            background: rgba(255,255,255,.03);
+            background: rgba(0, 0, 0, 0.6);
             backdrop-filter: blur(40px);
-            border: 1px solid rgba(255,255,255,.08);
+            border: 1px solid rgba(255,255,255,.1);
             border-radius: 40px;
             transition: all 0.4s ease;
         }
 
         .research-card {
-            background: rgba(255,255,255,.02);
-            border: 1px solid rgba(255,255,255,.1);
+            background: rgba(0, 0, 0, 0.7);
+            border: 1px solid rgba(255,255,255,.15);
             border-radius: 40px;
             padding: 60px;
             flex: 1;
             min-width: 0;
-            box-shadow: 0 0 25px rgba(255,255,255,0.03);
+            box-shadow: 0 0 25px rgba(0,0,0,0.8);
         }
 
         .spaced-list li { margin-bottom: 24px; line-height: 1.7; }
@@ -70,8 +70,8 @@
         .text-glow { animation: text-glow-pulse 3s infinite ease-in-out; }
 
         @keyframes neon-pulse {
-            0%, 100% { box-shadow: 0 0 5px rgba(255,255,255,0.1), inset 0 0 5px rgba(255,255,255,0.05); }
-            50% { box-shadow: 0 0 20px rgba(255,255,255,0.2), inset 0 0 10px rgba(255,255,255,0.1); }
+            0%, 100% { box-shadow: 0 0 5px rgba(255,255,255,0.1), inset 0 0 5px rgba(0,0,0,0.5); }
+            50% { box-shadow: 0 0 20px rgba(255,255,255,0.2), inset 0 0 10px rgba(0,0,0,0.5); }
         }
         .neon-glow { animation: neon-pulse 3s infinite ease-in-out; }
 
