@@ -78,6 +78,15 @@
         h1, h2, h3 { font-weight: 900; letter-spacing: 0.15em; text-transform: uppercase; }
         .reveal-text { animation: slideIn 0.8s ease-out forwards; }
         @keyframes slideIn { from { opacity: 0; transform: translateX(-20px); } to { opacity: 1; transform: translateX(0); } }
+        @media (max-width: 768px) {
+    .research-card {
+        padding: 24px !important; /* Reduces space so text stays neat */
+        border-radius: 20px !important;
+    }
+    .spaced-list li {
+        margin-bottom: 16px !important; /* Tightens the spacing for mobile readability */
+    }
+}
     </style>
 </head>
 
