@@ -100,27 +100,48 @@
         }
         .spaced-list li { margin-bottom: 8px !important; }
     }
-       .luxury-red-box {
-    background: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 0, 0, 0.3);
-    padding: 16px;
+      .luxury-emerald-box {
+    background: rgba(0, 20, 0, 0.4); /* Dark emerald tint */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    /* Refined gold border with inner shadow */
+    border: 2px solid #bfa071; 
     border-radius: 16px;
-    display: inline-block;
+    padding: 20px;
     max-width: 600px;
+    margin-top: 1.5rem; /* Equivalent to mt-6 */
+    /* Deep green background glow */
+    box-shadow: 0 0 30px rgba(0, 50, 0, 0.6); 
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
 }
 
-@keyframes expensive-glow {
-    0%, 100% { text-shadow: 0 0 8px rgba(255, 0, 0, 0.5); opacity: 0.9; }
-    50% { text-shadow: 0 0 16px rgba(255, 0, 0, 0.8); opacity: 1; }
+/* Subtle background shimmer effect for depth */
+.luxury-emerald-box::before {
+    content: '';
+    position: absolute;
+    top: -50%; left: -50%;
+    width: 200%; height: 200%;
+    background: radial-gradient(circle, rgba(191, 160, 113, 0.05) 0%, rgba(0,0,0,0) 70%);
+    transform: rotate(30deg);
+    pointer-events: none;
 }
 
-.text-glow-red { 
-    animation: expensive-glow 3s infinite ease-in-out; 
-    color: #ffb3b3; /* Soft, readable light red */
-    font-size: 0.75rem; /* Smaller, elegant size */
-    letter-spacing: 0.05em; /* Subtle spacing */
-    text-transform: none; /* Removed capitalization */
+/* Text styling with a pulsing golden radiance */
+@keyframes expensive-gold-glow {
+    0%, 100% { text-shadow: 0 0 8px rgba(235, 215, 185, 0.6); }
+    50% { text-shadow: 0 0 16px rgba(235, 215, 185, 0.9); }
+}
+
+.text-glow-gold { 
+    animation: expensive-gold-glow 4s infinite ease-in-out;
+    color: #ebd7b9; /* Soft, readable champagne gold */
+    font-size: 0.8rem; /* Small, elegant size */
+    line-height: 1.6;
+    letter-spacing: 0.03em;
+    font-weight: 300;
+    text-transform: none; /* Sentence case */
 }
     </style>
 </head>
@@ -167,8 +188,8 @@
                         <iframe class="w-full h-full grayscale opacity-70" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d80000.0!2d-62.7!3d17.3!2m3!1f0!2f45!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2sus!4v1&z=10" allowfullscreen="" loading="lazy"></iframe>
                     </div>
                 </div>
-               <div class="luxury-red-box mt-6">
-    <p class="text-glow-red">
+              <div class="luxury-emerald-box">
+    <p class="text-glow-gold">
         After eight months of conducting independent research with the Emotion Encoded initiative, I was invited by the Stanford School of Medicine to integrate my findings into their Global AI Implementation Curriculum. This partnership formally incorporates my proprietary Caribbean physician insights into Stanford’s curriculum, helping to address a critical regional data gap and establishing a permanent case study for clinical AI implementation.
     </p>
 </div>
