@@ -100,24 +100,27 @@
         }
         .spaced-list li { margin-bottom: 8px !important; }
     }
-       .luxury-red-glow {
-    background: rgba(255, 0, 0, 0.03); /* Subtle red tint */
-    backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 0, 0, 0.2);
-    padding: 24px;
-    border-radius: 24px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    transition: all 0.5s ease;
+       .luxury-red-box {
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 0, 0, 0.3);
+    padding: 16px;
+    border-radius: 16px;
+    display: inline-block;
+    max-width: 600px;
 }
 
 @keyframes expensive-glow {
-    0%, 100% { text-shadow: 0 0 10px rgba(255, 0, 0, 0.4), 0 0 20px rgba(255, 0, 0, 0.2); }
-    50% { text-shadow: 0 0 20px rgba(255, 0, 0, 0.6), 0 0 40px rgba(255, 0, 0, 0.3); }
+    0%, 100% { text-shadow: 0 0 8px rgba(255, 0, 0, 0.5); opacity: 0.9; }
+    50% { text-shadow: 0 0 16px rgba(255, 0, 0, 0.8); opacity: 1; }
 }
 
 .text-glow-red { 
-    animation: expensive-glow 4s infinite ease-in-out; 
-    color: #ffcccc; /* Soft, expensive-looking light red */
+    animation: expensive-glow 3s infinite ease-in-out; 
+    color: #ffb3b3; /* Soft, readable light red */
+    font-size: 0.75rem; /* Smaller, elegant size */
+    letter-spacing: 0.05em; /* Subtle spacing */
+    text-transform: none; /* Removed capitalization */
 }
     </style>
 </head>
@@ -164,8 +167,8 @@
                         <iframe class="w-full h-full grayscale opacity-70" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d80000.0!2d-62.7!3d17.3!2m3!1f0!2f45!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2sus!4v1&z=10" allowfullscreen="" loading="lazy"></iframe>
                     </div>
                 </div>
-                <div class="luxury-red-glow mt-8">
-    <p class="text-xs md:text-sm font-light leading-relaxed tracking-[0.2em] uppercase text-glow-red">
+               <div class="luxury-red-box mt-6">
+    <p class="text-glow-red">
         After eight months of conducting independent research with the Emotion Encoded initiative, I was invited by the Stanford School of Medicine to integrate my findings into their Global AI Implementation Curriculum. This partnership formally incorporates my proprietary Caribbean physician insights into Stanford’s curriculum, helping to address a critical regional data gap and establishing a permanent case study for clinical AI implementation.
     </p>
 </div>
