@@ -100,11 +100,25 @@
         }
         .spaced-list li { margin-bottom: 8px !important; }
     }
-        @keyframes red-glow-pulse {
-    0%, 100% { text-shadow: 0 0 5px rgba(255, 0, 0, 0.3), 0 0 10px rgba(255, 0, 0, 0.2); color: #ff4d4d; }
-    50% { text-shadow: 0 0 15px rgba(255, 0, 0, 0.8), 0 0 25px rgba(255, 0, 0, 0.5); color: #ff0000; }
+       .luxury-red-glow {
+    background: rgba(255, 0, 0, 0.03); /* Subtle red tint */
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 0, 0, 0.2);
+    padding: 24px;
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transition: all 0.5s ease;
 }
-.text-glow-red { animation: red-glow-pulse 3s infinite ease-in-out; }
+
+@keyframes expensive-glow {
+    0%, 100% { text-shadow: 0 0 10px rgba(255, 0, 0, 0.4), 0 0 20px rgba(255, 0, 0, 0.2); }
+    50% { text-shadow: 0 0 20px rgba(255, 0, 0, 0.6), 0 0 40px rgba(255, 0, 0, 0.3); }
+}
+
+.text-glow-red { 
+    animation: expensive-glow 4s infinite ease-in-out; 
+    color: #ffcccc; /* Soft, expensive-looking light red */
+}
     </style>
 </head>
 
@@ -144,14 +158,17 @@
                         <p class="text-zinc-400 text-xs md:text-sm font-light leading-relaxed tracking-widest uppercase">
                             I was born and raised on a tiny Caribbean twin island of just 48,000 people. This is also where I achieved my accomplishments.
                         </p>
-                        <p class="text-zinc-400 text-xs md:text-sm font-light leading-relaxed tracking-widest uppercase mt-6 text-glow-red">
-    After eight months of conducting independent research with the Emotion Encoded initiative, I was invited by the Stanford School of Medicine to integrate my findings into their Global AI Implementation Curriculum. This partnership formally incorporates my proprietary Caribbean physician insights into Stanford’s curriculum, helping to address a critical regional data gap and establishing a permanent case study for clinical AI implementation.
-</p>
+                        
                     </div>
                     <div class="w-full md:w-1/2 h-48 md:h-64 rounded-[30px] overflow-hidden border border-white/10 neon-glow">
                         <iframe class="w-full h-full grayscale opacity-70" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d80000.0!2d-62.7!3d17.3!2m3!1f0!2f45!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2sus!4v1&z=10" allowfullscreen="" loading="lazy"></iframe>
                     </div>
                 </div>
+                <div class="luxury-red-glow mt-8">
+    <p class="text-xs md:text-sm font-light leading-relaxed tracking-[0.2em] uppercase text-glow-red">
+        After eight months of conducting independent research with the Emotion Encoded initiative, I was invited by the Stanford School of Medicine to integrate my findings into their Global AI Implementation Curriculum. This partnership formally incorporates my proprietary Caribbean physician insights into Stanford’s curriculum, helping to address a critical regional data gap and establishing a permanent case study for clinical AI implementation.
+    </p>
+</div>
 
                 <div class="flex flex-col md:flex-row gap-8 w-full pb-8">
                     <div class="research-card neon-glow w-full md:w-auto md:flex-1 p-6">
