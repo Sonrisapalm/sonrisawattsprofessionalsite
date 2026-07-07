@@ -1,1 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/jpeg" href="images/favicon.jpg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;700;900&display=swap" rel="stylesheet">
+    <style>
+        #tsparticles { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background: #020202; }
+        body { color: #fff; font-family: 'Inter', sans-serif; height: 100vh; margin: 0; overflow-x: hidden; background: transparent; }
+        .content-scroll { overflow-y: auto; height: 100vh; padding-right: 20px; scrollbar-width: thin; }
+        .glass-luxury { background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(40px); border: 1px solid rgba(255,255,255,.1); border-radius: 40px; }
+        .research-card { background: rgba(0, 0, 0, 0.7); border: 1px solid rgba(255,255,255,.15); border-radius: 40px; padding: 60px; box-shadow: 0 0 25px rgba(0,0,0,0.8); }
+        .neon-glow { box-shadow: 0 0 20px rgba(255,255,255,0.1); }
+        .spaced-list li { margin-bottom: 24px; line-height: 1.7; }
+        h1, h2, h3 { font-weight: 900; letter-spacing: 0.15em; text-transform: uppercase; }
+        .text-glow { text-shadow: 0 0 10px rgba(255,255,255,0.5); }
+    </style>
+</head>
 
+<body class="p-6 md:p-12">
+    <div id="tsparticles"></div>
+
+    <div class="max-w-[1800px] mx-auto flex flex-col md:flex-row gap-8 md:gap-16 h-full items-start">
+        <nav class="w-full md:w-64 space-y-6 md:space-y-12 shrink-0">
+            <h1 class="text-3xl">Sonrisa Watts</h1>
+            <ul class="space-y-6">
+                <li><a href="index.html" class="text-[9px] tracking-[0.3em] uppercase opacity-50 hover:opacity-100 transition">Back to Home</a></li>
+            </ul>
+        </nav>
+
+        <main class="flex-grow content-scroll w-full">
+            <section class="space-y-16 py-12">
+                <div class="flex flex-col md:flex-row gap-8 w-full">
+                    
+                    <!-- Emotion Encoded -->
+                    <div class="research-card neon-glow w-full md:flex-1 p-6">
+                        <div class="relative group overflow-hidden rounded-[20px] mb-8 shadow-2xl border border-white/10 h-64 w-full neon-glow">
+                            <video class="w-full h-full object-cover opacity-50 group-hover:opacity-100 transition-opacity duration-700" src="images/emotionencoded.mp4" autoplay loop muted playsinline></video>
+                        </div>
+                        <h3 class="text-xl md:text-2xl text-white">Emotion Encoded</h3>
+                        <p class="text-[9px] md:text-[10px] uppercase text-zinc-500 tracking-[0.2em] mt-2 mb-6">Independent Research Initiative • Founder & Principal Researcher</p>
+                        <a href="https://encodedemotion.org" target="_blank" class="inline-block mb-8 text-[9px] uppercase tracking-[0.2em] border border-white/10 px-6 py-3 rounded-full hover:bg-white/5 transition">encodedemotion.org</a>
+                        
+                        <ul class="spaced-list text-zinc-300 text-sm list-disc pl-4">
+                            <li>Independently conceptualized and executed mixed-methods studies (N≈160+) on cognitive bias and AI trust in the Caribbean.</li>
+                            <li>Research findings formally cited in a <span class="text-glow font-bold">Ministry of Education national policy proposal.</span></li>
+                            <li>Conducted expert interview series (N≈40+) with surgeons, cardiologists, and behavioral scientists.</li>
+                            <li><span class="text-glow font-bold">Pending:</span> View First Preprint (PsyArXiv)</li>
+                            <li><span class="text-glow font-bold">Pending:</span> View Policy Proposal</li>
+                        </ul>
+                    </div>
+
+                    <!-- Stanford Collaboration -->
+                    <div class="research-card neon-glow w-full md:flex-1 p-6">
+                        <h3 class="text-xl text-white mb-6">Stanford Medicine x Emotion Encoded</h3>
+                        <p class="text-[10px] uppercase text-zinc-500 tracking-[0.2em] mb-8">Stanford University School of Medicine | Global Health Innovation</p>
+                        
+                        <div class="relative group overflow-hidden rounded-[30px] mb-8 shadow-2xl border border-white/10 h-64 neon-glow">
+                            <img src="images/Emotion_Encoded_x_Stanford_University_Collaboration.jpg" class="w-full h-full object-cover">
+                        </div>
+                        
+                        <ul class="spaced-list text-zinc-300 text-sm list-disc pl-4">
+                            <li><span class="text-glow font-bold">Invited by Stanford School of Medicine</span> to integrate Caribbean physician insights into their Global AI Implementation Curriculum.</li>
+                            <li>Collaborative partnership to establish a permanent case study for clinical AI implementation.</li>
+                            <li>Co-authoring a first-author peer-reviewed manuscript with Stanford faculty.</li>
+                        </ul>
+
+                        <div class="flex flex-col gap-4 mt-12">
+                            <div class="glass-luxury p-6 border border-white/10 text-center">
+                                <span class="text-[8px] uppercase tracking-[0.3em] opacity-50">View Curriculum: Pending</span>
+                            </div>
+                            <div class="glass-luxury p-6 border border-white/10 text-center">
+                                <span class="text-[8px] uppercase tracking-[0.3em] opacity-50">View Manuscript: Pending</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        tsParticles.load("tsparticles", {
+            particles: { number: { value: 60 }, color: { value: "#ffffff" }, opacity: { value: 0.3 }, size: { value: 2 }, 
+            line_linked: { enable: true, distance: 150, opacity: 0.2 }, move: { enable: true, speed: 1 } },
+            interactivity: { events: { onhover: { enable: true, mode: "grab" } } }
+        });
+    </script>
+</body>
+</html>
