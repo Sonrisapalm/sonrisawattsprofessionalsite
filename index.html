@@ -143,6 +143,20 @@
     font-weight: 300;
     text-transform: none; /* Sentence case */
 }
+        @media (max-width: 768px) {
+    /* Ensures containers don't overflow the screen width */
+    .research-card {
+        padding: 24px !important; 
+        border-radius: 20px !important;
+    }
+    /* Prevents the text from being too large for phone screens */
+    .research-card p, .research-card li { 
+        font-size: 12px !important; 
+        line-height: 1.5 !important; 
+    }
+    /* Adds breathing room between list items */
+    .spaced-list li { margin-bottom: 12px !important; }
+}
     </style>
 </head>
 
