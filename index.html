@@ -8,164 +8,14 @@
     <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;700;900&display=swap" rel="stylesheet">
     <style>
-        /* Particle Background Layer */
-        #tsparticles {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            background: #020202;
-        }
-
-        body {
-            color: #fff;
-            font-family: 'Inter', sans-serif;
-            height: 100vh;
-            margin: 0;
-            overflow: hidden; 
-            background: transparent;
-        }
-
-        .content-scroll { 
-            overflow-y: auto; 
-            height: 100vh; 
-            padding-right: 20px; 
-            scrollbar-width: thin;
-            scrollbar-color: #444 #0a0a0a;
-        }
-        .content-scroll::-webkit-scrollbar { width: 8px; }
-        .content-scroll::-webkit-scrollbar-track { background: rgba(0,0,0,0.5); }
-        .content-scroll::-webkit-scrollbar-thumb {
-            background: linear-gradient(180deg, #333, #111);
-            border-radius: 10px;
-            border: 1px solid #444;
-        }
-        .content-scroll::-webkit-scrollbar-thumb:hover { background: #555; box-shadow: 0 0 10px rgba(255,255,255,0.2); }
-
-        .glass-luxury {
-            background: rgba(0, 0, 0, 0.6);
-            backdrop-filter: blur(40px);
-            border: 1px solid rgba(255,255,255,.1);
-            border-radius: 40px;
-            transition: all 0.4s ease;
-        }
-
-        .research-card {
-            background: rgba(0, 0, 0, 0.7);
-            border: 1px solid rgba(255,255,255,.15);
-            border-radius: 40px;
-            padding: 60px;
-            flex: 1;
-            min-width: 0;
-            box-shadow: 0 0 25px rgba(0,0,0,0.8);
-        }
-        overflow-x: hidden; /* Prevents the page from wiggling left and right */
-}
-
-/* Added to the main container logic */
-.max-w-[1800px] {
-    width: 100%;
-    padding-left: 1rem;
-    padding-right: 1rem;
-}
-
+        #tsparticles { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background: #020202; }
+        body { color: #fff; font-family: 'Inter', sans-serif; height: 100vh; margin: 0; overflow-x: hidden; background: transparent; }
+        .content-scroll { overflow-y: auto; height: 100vh; padding-right: 20px; scrollbar-width: thin; }
+        .research-card { background: rgba(0, 0, 0, 0.7); border: 1px solid rgba(255,255,255,.15); border-radius: 40px; padding: 60px; box-shadow: 0 0 25px rgba(0,0,0,0.8); flex: 1; }
+        .neon-glow { box-shadow: 0 0 20px rgba(255,255,255,0.1); }
         .spaced-list li { margin-bottom: 24px; line-height: 1.7; }
-        
-        @keyframes text-glow-pulse {
-            0%, 100% { text-shadow: 0 0 5px rgba(255,255,255,0.2), 0 0 10px rgba(255,255,255,0.1); }
-            50% { text-shadow: 0 0 15px rgba(255,255,255,0.6), 0 0 25px rgba(255,255,255,0.4); }
-        }
-        .text-glow { animation: text-glow-pulse 3s infinite ease-in-out; }
-
-        @keyframes neon-pulse {
-            0%, 100% { box-shadow: 0 0 5px rgba(255,255,255,0.1), inset 0 0 5px rgba(0,0,0,0.5); }
-            50% { box-shadow: 0 0 20px rgba(255,255,255,0.2), inset 0 0 10px rgba(0,0,0,0.5); }
-        }
-        .neon-glow { animation: neon-pulse 3s infinite ease-in-out; }
-
         h1, h2, h3 { font-weight: 900; letter-spacing: 0.15em; text-transform: uppercase; }
-        .reveal-text { animation: slideIn 0.8s ease-out forwards; }
-        @keyframes slideIn { from { opacity: 0; transform: translateX(-20px); } to { opacity: 1; transform: translateX(0); } }
-        @media (max-width: 768px) {
-    .research-card {
-        padding: 24px !important; /* Reduces space so text stays neat */
-        border-radius: 20px !important;
-    }
-    .spaced-list li {
-        margin-bottom: 16px !important; /* Tightens the spacing for mobile readability */
-    }
-}
-        @media (max-width: 768px) {
-        .research-card {
-            padding: 16px !important; 
-            border-radius: 20px !important;
-        }
-        .research-card h3 { font-size: 14px !important; }
-        .research-card p, .research-card li { 
-            font-size: 10px !important; /* Adjusted slightly up from 8px for better readability */
-            line-height: 1.5 !important; 
-        }
-        .spaced-list li { margin-bottom: 8px !important; }
-    }
-      .luxury-emerald-box {
-    background: rgba(0, 20, 0, 0.4); /* Dark emerald tint */
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    /* Refined gold border with inner shadow */
-    border: 2px solid #bfa071; 
-    border-radius: 16px;
-    padding: 20px;
-    max-width: 600px;
-    margin-top: 1.5rem; /* Equivalent to mt-6 */
-    /* Deep green background glow */
-    box-shadow: 0 0 30px rgba(0, 50, 0, 0.6); 
-    display: inline-block;
-    position: relative;
-    overflow: hidden;
-}
-
-/* Subtle background shimmer effect for depth */
-.luxury-emerald-box::before {
-    content: '';
-    position: absolute;
-    top: -50%; left: -50%;
-    width: 200%; height: 200%;
-    background: radial-gradient(circle, rgba(191, 160, 113, 0.05) 0%, rgba(0,0,0,0) 70%);
-    transform: rotate(30deg);
-    pointer-events: none;
-}
-
-/* Text styling with a pulsing golden radiance */
-@keyframes expensive-gold-glow {
-    0%, 100% { text-shadow: 0 0 8px rgba(235, 215, 185, 0.6); }
-    50% { text-shadow: 0 0 16px rgba(235, 215, 185, 0.9); }
-}
-
-.text-glow-gold { 
-    animation: expensive-gold-glow 4s infinite ease-in-out;
-    color: #ebd7b9; /* Soft, readable champagne gold */
-    font-size: 0.8rem; /* Small, elegant size */
-    line-height: 1.6;
-    letter-spacing: 0.03em;
-    font-weight: 300;
-    text-transform: none; /* Sentence case */
-}
-        @media (max-width: 768px) {
-    /* Ensures containers don't overflow the screen width */
-    .research-card {
-        padding: 24px !important; 
-        border-radius: 20px !important;
-    }
-    /* Prevents the text from being too large for phone screens */
-    .research-card p, .research-card li { 
-        font-size: 12px !important; 
-        line-height: 1.5 !important; 
-    }
-    /* Adds breathing room between list items */
-    .spaced-list li { margin-bottom: 12px !important; }
-}
+        .text-glow { text-shadow: 0 0 10px rgba(255,255,255,0.5); }
     </style>
 </head>
 
@@ -173,124 +23,45 @@
     <div id="tsparticles"></div>
 
     <div class="max-w-[1800px] mx-auto flex flex-col md:flex-row gap-8 md:gap-16 h-full items-start">
-        <nav class="w-full md:w-64 space-y-6 md:space-y-12 shrink-0">
+        <nav class="w-full md:w-64 space-y-12 shrink-0">
             <h1 class="text-3xl">Sonrisa Watts</h1>
-            <ul class="space-y-6">
-                <li><a href="#" class="text-[9px] tracking-[0.3em] uppercase opacity-50 hover:opacity-100 transition">Portfolio</a></li>
-                <li><a href="#" class="text-[9px] tracking-[0.3em] uppercase opacity-50 hover:opacity-100 transition">Pictures of Me</a></li>
-                <li><a href="accomplishments.html" class="text-[9px] tracking-[0.3em] uppercase opacity-50 hover:opacity-100 transition">Accomplishments</a></li>
-                <li><a href="https://www.sonrisawatts.com/" class="text-[9px] tracking-[0.3em] uppercase opacity-50 hover:opacity-100 transition">sonrisawattsarchive.com: Personal Pictures: Family, Fun Videos and more!</a></li>
-            </ul>
-            
+            <a href="index.html" class="block text-[9px] tracking-[0.3em] uppercase opacity-50 hover:opacity-100 transition">Back to Home</a>
         </nav>
 
         <main class="flex-grow content-scroll w-full">
-            <section class="space-y-16 md:space-y-32 py-12 md:py-24">
-                <div>
-                    <h2 class="text-[8px] uppercase tracking-[0.6em] text-zinc-500 mb-10 reveal-text">Pictures of Me</h2>
-                    <div class="flex flex-col md:flex-row gap-8">
-                        <div class="glass-luxury w-full h-60 md:h-80 hover:scale-[1.01] transition-transform"></div>
-                        <div class="glass-luxury w-full h-60 md:h-80 hover:scale-[1.01] transition-transform"></div>
-                        <div class="glass-luxury w-full h-60 md:h-80 hover:scale-[1.01] transition-transform"></div>
+            <section class="flex flex-col md:flex-row gap-8 w-full py-12">
+                
+                <div class="research-card neon-glow w-full p-6">
+                    <div class="relative group overflow-hidden rounded-[20px] mb-8 shadow-2xl border border-white/10 h-64 w-full">
+                        <video class="w-full h-full object-cover opacity-50 group-hover:opacity-100 transition-opacity duration-700" src="images/emotionencoded.mp4" autoplay loop muted playsinline></video>
                     </div>
+                    <h3 class="text-xl md:text-2xl text-white mb-2">Emotion Encoded</h3>
+                    <p class="text-[10px] uppercase text-zinc-500 tracking-[0.2em] mb-6">Independent Research Initiative • Founder & Principal Researcher</p>
+                    <a href="https://encodedemotion.org" target="_blank" class="inline-block mb-8 text-[9px] uppercase tracking-[0.2em] border border-white/10 px-6 py-3 rounded-full hover:bg-white/5 transition">encodedemotion.org</a>
+                    
+                    <ul class="spaced-list text-zinc-300 text-sm list-disc pl-4">
+                        <li>Independently conceptualized, designed, and executed mixed-methods studies (N≈160+) investigating how emotional reasoning, heuristics, metacognition, and cognitive bias drive psychological resistance to Artificial Intelligence in high-stakes fields (medicine, law, finance) in the Caribbean. Findings from logistic regression modeling (Python, using pandas, matplotlib, seaborn) revealed agency bias, metacognitive dissonance, and affective heuristics as dominant predictors of AI trust (OR=2.96, trend-level significance).</li>
+                        <li>Research findings were formally cited in a <span class="text-glow font-bold">Ministry of Education national policy proposal on digital literacy and AI ethics,</span> potentially impacting over 3,000 students.</li>
+                        <li><span class="text-glow font-bold">Conducted an extensive professional interview series (N≈40+), performing thematic and semantic analyses of experts, including surgeons, anesthesiologists, oncologists, radiologists, cardiologists, founders of tele-health</span> and behavioural science startups, physicians in internal medicine, attorneys-at-law, a biomedical engineering professor of Johns Hopkins University, and psychologists in Caribbean region.</li>
+                        <li>Preprint on PsyArXiv: Independent research paper, "The Cognitive Foundations of Algorithmic Trust: Human Reasoning in High-Stakes AI Systems," accepted and available on the psychology preprint server.</li>
+                        <li>Authored and published 40+ open-access briefs (e.g., “AI Therapists vs. Financial Advisors: Cognitive-Emotional Divides in Trust”) on website fostering public literacy on decoding emotional barriers to AI adoption.</li>
+                    </ul>
                 </div>
 
-                <div class="flex flex-col md:flex-row gap-8 md:gap-20 items-center border-b border-white/5 pb-12 md:pb-20">
-    <div class="w-full md:w-1/2">
-        <div class="inline-flex items-center gap-3 px-6 py-2 rounded-full bg-white/5 border border-white/10 mb-8">
-            <div class="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></div>
-            <span class="text-[9px] uppercase tracking-[0.3em]">Accomplishments</span>
-        </div>
-        <h2 class="text-2xl md:text-3xl mb-6 reveal-text">What I Accomplished At Ages 24-25</h2>
-        <p class="text-zinc-400 text-xs md:text-sm font-light leading-relaxed tracking-widest uppercase">
-            I was born and raised on a tiny Caribbean twin island of just 48,000 people. This is also where I achieved my accomplishments.
-        </p>
-    </div>
-
-    <!-- Clickable Map Wrapper -->
-    <a href="https://www.google.com/maps/place/Saint+Kitts+and+Nevis/" 
-       target="_blank" 
-       class="w-full md:w-1/2 h-48 md:h-64 rounded-[30px] overflow-hidden border border-white/10 neon-glow relative group block">
-        
-        <iframe class="w-full h-full grayscale opacity-70 pointer-events-none" 
-                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d80000.0!2d-62.7!3d17.3!2m3!1f0!2f45!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2sus!4v1&z=10" 
-                loading="lazy">
-        </iframe>
-
-        <!-- Hover Overlay -->
-        <div class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <span class="text-[10px] uppercase tracking-[0.2em] bg-black/80 px-6 py-3 rounded-full border border-white/10">Open in Maps</span>
-        </div>
-    </a>
-</div>
-              <div class="luxury-emerald-box">
-    <p class="text-glow-gold">
-        After eight (8) months of conducting independent research with the Emotion Encoded initiative, I was invited by the Stanford School of Medicine to integrate my findings into their Global AI Implementation Curriculum. This partnership formally incorporates my proprietary Caribbean physician insights into Stanford’s global open access curriculum, helping to address a critical data gap and establishing a permanent case study for clinical AI implementation.
-    </p>
-</div>
-
-                <div class="flex flex-col md:flex-row gap-8 w-full pb-8">
-                    <div class="research-card neon-glow w-full md:w-auto md:flex-1 p-6">
-                        <div class="flex flex-col md:flex-row items-start justify-between mb-8">
-                            <div>
-                                <!-- Video Preview Box -->
-<div class="relative group overflow-hidden rounded-[20px] mb-8 shadow-2xl border border-white/10 h-48 md:h-80 w-full neon-glow">
-    <video 
-        class="w-full h-full object-cover transition-opacity duration-700 opacity-30 group-hover:opacity-100" 
-        src="images/emotionencoded.mp4" 
-        autoplay 
-        loop 
-        muted 
-        playsinline>
-    </video>
-    <!-- Subtle overlay to make it look "dim" -->
-    <div class="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors duration-700 pointer-events-none"></div>
-</div>
-                                <h3 class="text-xl md:text-2xl text-white">Emotion Encoded</h3>
-                                <p class="text-[9px] md:text-[10px] uppercase text-zinc-500 tracking-[0.2em] mt-2">Independent Research Initiative • Founder & Principal Researcher • June 2025 – Present • St. Kitts & Nevis</p>
-                            </div>
-                            <a href="https://encodedemotion.org" target="_blank" class="mt-4 md:mt-0 text-[9px] uppercase tracking-[0.2em] border border-white/10 px-6 py-3 rounded-full hover:bg-white/5 transition">encodedemotion.org</a>
-                        </div>
-                        <ul class="spaced-list text-zinc-300 text-sm list-disc pl-4">
-                            <li>Independently conceptualized, designed, and executed mixed-methods studies (N≈160+) investigating how emotional reasoning, heuristics, metacognition, and cognitive bias drive psychological resistance to Artificial Intelligence in high-stakes fields (medicine, law, finance) in the Caribbean. Findings from logistic regression modeling (Python, using pandas, matplotlib, seaborn) revealed agency bias, metacognitive dissonance, and affective heuristics as dominant predictors of AI trust (OR=2.96, trend-level significance).</li>
-                            <li>Research findings were formally cited in a <span class="text-glow font-bold">Ministry of Education national policy proposal on digital literacy and AI ethics,</span> potentially impacting over 3,000 students.</li>
-                            <li><span class="text-glow font-bold">Conducted an extensive professional interview series (N≈45+), performing thematic and semantic analyses of experts, including surgeons, anesthesiologists, oncologists, radiologists, cardiologists, founders of tele-health</span> and behavioural science startups, physicians in internal medicine, attorneys-at-law, a biomedical engineering professor of Johns Hopkins University, and psychologists in Caribbean region to identify conditional acceptance, accountability ambiguity, and perceived threat to expertise as core cognitive-emotional barriers to professional AI adoption.</li>
-                            <li>Preprint on PsyArXiv: Independent research paper, "The Cognitive Foundations of Algorithmic Trust: Human Reasoning in High-Stakes AI Systems," accepted and available on the psychology preprint server.</li>
-                            <li>Authored and published 60+ open-access briefs (e.g., “AI Therapists vs. Financial Advisors: Cognitive-Emotional Divides in Trust”) on website fostering public literacy on decoding emotional barriers to AI adoption.</li>
-                        </ul>
+                <div class="research-card neon-glow w-full p-6">
+                    <h3 class="text-xl text-white mb-6">Stanford Medicine x Emotion Encoded</h3>
+                    <p class="text-[10px] uppercase text-zinc-500 tracking-[0.2em] mb-8">Stanford University School of Medicine | Global Health Innovation | Research Collaborative Partnership & Co Author | March 2026 – Present</p>
+                    
+                    <div class="relative group overflow-hidden rounded-[30px] mb-8 shadow-2xl border border-white/10 h-60 md:h-80">
+                        <img src="images/Emotion_Encoded_x_Stanford_University_Collaboration.jpg" alt="Stanford Collaboration" class="w-full h-full object-cover">
                     </div>
-
-                    <div class="research-card neon-glow w-full md:w-auto md:flex-1 p-6">
-                        <h3 class="text-xl text-white mb-6 reveal-text">Stanford Medicine x Emotion Encoded</h3>
-                        <p class="text-[10px] uppercase text-zinc-500 tracking-[0.2em] mb-8">
-                            Stanford University School of Medicine | Global Health Innovation | Research Collaborative Partnership & Co Author | March 2026 – Present
-                        </p>
-                        <div class="relative group overflow-hidden rounded-[30px] mb-8 shadow-2xl border border-white/10 h-60 md:h-80 neon-glow">
-                            <img src="images/Emotion_Encoded_x_Stanford_University_Collaboration.jpg" alt="Sonrisa Watts Stanford University School of Medicine Collaboration" class="w-full h-full object-cover transition-transform duration-[2000ms] group-hover:scale-105">
-                        </div>
-                        <ul class="spaced-list text-zinc-300 text-sm list-disc pl-4 animate-in fade-in duration-1000">
-                            <li><span class="text-glow font-bold">Invited by Stanford School of Medicine to incorporate Emotion Encoded’s proprietary Caribbean physician insights into Stanford’s Global AI Implementation Curriculum on clinicians using AI,</span> having been formally requested by faculty, filling a critical regional data gap.</li>
-                            <li>Collaborative Partnership: facilitating the integration and adoption of Emotion Encoded’s research findings into the curriculum to establish a permanent case study for AI implementation, promoting Curriculm to different medical institutions, Departments of Health and Ministries.</li>
-                            <li>Providing localized qualitative datasets and thematic analyses to architect frameworks for calibrating human-AI trust among medical specialists.</li>
-                            <li>Co-authoring a first-author peer-reviewed manuscript with Stanford faculty on Caribbean physician perspectives on clinical AI trust.</li>
-                        </ul>
-                       <div class="flex flex-col gap-6 mt-12">
-    <!-- View Curriculum Button -->
-    <a href="#" class="glass-luxury px-10 py-5 rounded-full border border-white/10 hover:bg-white/10 flex flex-col items-center transition-all duration-300">
-        <span class="text-[10px] uppercase tracking-[0.3em] text-white font-medium">View Curriculum</span>
-    </a>
-
-    <!-- The Glowing Preview Box -->
-    <div class="glass-luxury relative group overflow-hidden rounded-[30px] mb-8 shadow-2xl border border-white/10 h-60 md:h-80 flex items-center justify-center neon-glow transition-all duration-300">
-        <span class="text-[8px] uppercase tracking-[0.2em] text-white/50 font-light italic">Curriculum Preview Pending</span>
-    </div>
-
-    <!-- View Manuscript Button -->
-    <a href="#" class="glass-luxury px-10 py-5 rounded-full border border-white/10 hover:bg-white/10 flex flex-col items-center transition-all duration-300">
-        <span class="text-[10px] uppercase tracking-[0.3em] text-white font-medium">View Manuscript</span>
-    </a>
-</div>
-                    </div>
+                    
+                    <ul class="spaced-list text-zinc-300 text-sm list-disc pl-4">
+                        <li><span class="text-glow font-bold">Invited by Stanford School of Medicine to incorporate Emotion Encoded’s proprietary Caribbean physician insights into Stanford’s Global AI Implementation Curriculum on clinicians using AI,</span> having been formally requested by faculty, filling a critical regional data gap.</li>
+                        <li>Collaborative Partnership: facilitating the integration and adoption of Emotion Encoded’s research findings into the curriculum to establish a permanent case study for AI implementation, promoting Curriculum to different medical institutions, Departments of Health and Ministries.</li>
+                        <li>Providing localized qualitative datasets and thematic analyses to architect frameworks for calibrating human-AI trust among medical specialists.</li>
+                        <li>Co-authoring a first-author peer-reviewed manuscript with Stanford faculty on Caribbean physician perspectives on clinical AI trust.</li>
+                    </ul>
                 </div>
             </section>
         </main>
@@ -298,38 +69,9 @@
 
     <script>
         tsParticles.load("tsparticles", {
-            particles: {
-                number: { value: 60, density: { enable: true, value_area: 800 } },
-                color: { value: "#ffffff" },
-                shape: { type: "circle" },
-                opacity: { value: 0.3, random: true },
-                size: { value: 2, random: true },
-                line_linked: {
-                    enable: true,
-                    distance: 150,
-                    color: "#ffffff",
-                    opacity: 0.2,
-                    width: 1
-                },
-                move: {
-                    enable: true,
-                    speed: 1,
-                    direction: "none",
-                    random: true,
-                    out_mode: "out"
-                }
-            },
-            interactivity: {
-                detect_on: "window",
-                events: {
-                    onhover: { enable: true, mode: "grab" },
-                    onclick: { enable: true, mode: "push" }
-                },
-                modes: {
-                    grab: { distance: 200, line_linked: { opacity: 0.5 } }
-                }
-            },
-            retina_detect: true
+            particles: { number: { value: 60 }, color: { value: "#ffffff" }, opacity: { value: 0.3 }, size: { value: 2 }, 
+            line_linked: { enable: true, distance: 150, opacity: 0.2 }, move: { enable: true, speed: 1 } },
+            interactivity: { events: { onhover: { enable: true, mode: "grab" } } }
         });
     </script>
 </body>
