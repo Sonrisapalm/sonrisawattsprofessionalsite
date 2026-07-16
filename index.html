@@ -166,35 +166,46 @@
     /* Adds breathing room between list items */
     .spaced-list li { margin-bottom: 12px !important; }
 }
-       @media (max-width: 767px) {
+    
+@media (max-width: 767px) {
     /* 1. Force the row layout */
     .force-mobile-row {
         display: flex !important;
         flex-direction: row !important;
         flex-wrap: nowrap !important;
         gap: 6px !important;
+        align-items: stretch !important;
     }
     
-    /* 2. Each card takes 50% */
-    .force-mobile-row > div {
+    /* 2. Each card takes 50% width */
+    .force-mobile-row .research-card {
         flex: 0 0 50% !important;
-        padding: 6px !important;
+        padding: 8px !important;
+        display: flex !important;
+        flex-direction: column !important;
     }
 
-    /* 3. FIX: Images and Videos (Make them taller and fill the space) */
-    .force-mobile-row img, 
-    .force-mobile-row video {
+    /* 3. Force Media (Video and Images) to be small and consistent */
+    .force-mobile-row .research-card div[class*="h-"], 
+    .force-mobile-row .research-card img, 
+    .force-mobile-row .research-card video {
+        height: 70px !important;
+        min-height: 70px !important;
         width: 100% !important;
-        height: 100px !important; 
         object-fit: cover !important;
+        object-position: center !important;
     }
 
-    /* 4. FIX: Text (Make it readable, not tiny) */
-    .force-mobile-row h3 { font-size: 11px !important; line-height: 1.2 !important; margin-bottom: 4px !important; }
-    .force-mobile-row p, 
-    .force-mobile-row li { 
-        font-size: 9px !important; 
-        line-height: 1.3 !important; 
+    /* 4. Text scaling for readability */
+    .force-mobile-row .research-card h3 { 
+        font-size: 10px !important; 
+        line-height: 1.1 !important; 
+        margin-top: 4px !important; 
+    }
+    .force-mobile-row .research-card p, 
+    .force-mobile-row .research-card li { 
+        font-size: 8px !important; 
+        line-height: 1.2 !important; 
     }
 }
     </style>
