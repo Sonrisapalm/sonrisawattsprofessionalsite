@@ -11,8 +11,14 @@
     <style>
         #tsparticles { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background: #020202; }
         body { color: #fff; font-family: 'Inter', sans-serif; height: 100vh; margin: 0; overflow: hidden; background: transparent; }
-        .content-scroll { overflow-y: auto; height: 100vh; padding-right: 20px; scrollbar-width: none; -ms-overflow-style: none; }
-        .content-scroll::-webkit-scrollbar { display: none; }
+        
+        /* Restored Scrollbar */
+        .content-scroll { overflow-y: auto; height: 100vh; padding-right: 20px; scrollbar-width: thin; scrollbar-color: #444 #0a0a0a; }
+        .content-scroll::-webkit-scrollbar { width: 8px; }
+        .content-scroll::-webkit-scrollbar-track { background: rgba(0,0,0,0.5); }
+        .content-scroll::-webkit-scrollbar-thumb { background: linear-gradient(180deg, #333, #111); border-radius: 10px; border: 1px solid #444; }
+        .content-scroll::-webkit-scrollbar-thumb:hover { background: #555; }
+
         .glass-luxury { background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(40px); border: 1px solid rgba(255,255,255,.1); border-radius: 40px; }
         .research-card { background: rgba(0, 0, 0, 0.7); border: 1px solid rgba(255,255,255,.15); border-radius: 40px; padding: 40px; box-shadow: 0 0 25px rgba(0,0,0,0.8); }
         .neon-glow { box-shadow: 0 0 20px rgba(255,255,255,0.05); }
@@ -39,34 +45,12 @@
         <main class="flex-grow content-scroll w-full">
             <section class="space-y-16 md:space-y-32 py-12">
                 
-                <!-- Pictures Section -->
-                <div>
-                    <h2 class="text-[8px] uppercase tracking-[0.6em] text-zinc-500 mb-10">Pictures of Me</h2>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        <div class="glass-luxury h-60 md:h-80 hover:scale-[1.01] transition-transform bg-zinc-900/50"></div>
-                        <div class="glass-luxury h-60 md:h-80 hover:scale-[1.01] transition-transform bg-zinc-900/50"></div>
-                        <div class="glass-luxury h-60 md:h-80 hover:scale-[1.01] transition-transform bg-zinc-900/50"></div>
-                    </div>
-                </div>
-
-                <!-- Intro Section -->
-                <div class="flex flex-col md:flex-row gap-8 md:gap-20 items-center border-b border-white/5 pb-12">
-                    <div class="w-full">
-                        <h2 class="text-2xl md:text-3xl mb-6">What I Accomplished At Ages 24-25</h2>
-                        <p class="text-zinc-400 text-xs md:text-sm font-light leading-relaxed tracking-widest uppercase">
-                            I was born and raised on a tiny Caribbean twin island of just 48,000 people. This is also where I achieved my accomplishments.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Research Cards -->
                 <div class="flex flex-col md:flex-row gap-8 w-full">
                     
-                    <!-- Emotion Encoded -->
                     <div class="research-card neon-glow w-full p-6">
                         <div class="relative overflow-hidden rounded-[20px] mb-8 shadow-2xl border border-white/10 h-64 w-full">
-                            <video class="w-full h-full object-cover" src="images/emotionencoded.mp4" autoplay loop muted playsinline></video>
-                            <div class="absolute inset-0 bg-black/40"></div>
+                            <video class="w-full h-full object-cover opacity-50" src="images/emotionencoded.mp4" autoplay loop muted playsinline></video>
+                            <div class="absolute inset-0 bg-black/60"></div>
                         </div>
                         <h3 class="text-xl md:text-2xl text-white">Emotion Encoded</h3>
                         <p class="text-[9px] md:text-[10px] uppercase text-zinc-500 tracking-[0.2em] mt-2 mb-6">Independent Research Initiative • Founder & Principal Researcher • June 2025 – Present • St. Kitts & Nevis</p>
@@ -80,12 +64,10 @@
                         </ul>
                     </div>
 
-                    <!-- Stanford -->
                     <div class="research-card neon-glow w-full p-6">
                         <h3 class="text-xl text-white mb-6">Stanford Medicine x Emotion Encoded</h3>
                         <p class="text-[10px] uppercase text-zinc-500 tracking-[0.2em] mb-8">Stanford University School of Medicine | Global Health Innovation | March 2026 – Present</p>
                         <div class="relative rounded-[30px] mb-8 shadow-2xl border border-white/10 h-60 md:h-80 bg-black/20 overflow-hidden group">
-                            <!-- object-contain applied here to prevent cropping -->
                             <img src="images/Emotion_Encoded_x_Stanford_University_Collaboration.jpg" alt="Stanford Collaboration" class="w-full h-full object-contain transition-transform duration-[2000ms] group-hover:scale-105">
                         </div>
                         <ul class="spaced-list text-zinc-300 text-sm list-disc pl-4">
@@ -95,8 +77,7 @@
                             <li>Co-authoring a first-author peer-reviewed manuscript with Stanford faculty on Caribbean physician perspectives on clinical AI trust.</li>
                         </ul>
                         <div class="flex flex-col gap-6 mt-12">
-                            <!-- Glowing Preview Box Added Back -->
-                            <div class="glass-luxury relative group overflow-hidden rounded-[30px] mb-8 shadow-2xl border border-white/10 h-32 flex items-center justify-center neon-glow transition-all duration-300">
+                            <div class="glass-luxury relative group overflow-hidden rounded-[30px] mb-8 shadow-2xl border border-white/10 aspect-square w-full flex items-center justify-center neon-glow">
                                 <span class="text-[8px] uppercase tracking-[0.2em] text-white/50 font-light italic">Curriculum Preview Pending</span>
                             </div>
                             <a href="#" class="glass-luxury px-10 py-5 rounded-full border border-white/10 text-center hover:bg-white/10"><span class="text-[10px] uppercase tracking-[0.3em]">View Curriculum</span></a>
