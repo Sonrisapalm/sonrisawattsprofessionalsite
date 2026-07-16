@@ -167,13 +167,23 @@
     .spaced-list li { margin-bottom: 12px !important; }
 }
         @media (max-width: 767px) {
-    .mobile-row {
+    .force-mobile-row {
         display: flex !important;
         flex-direction: row !important;
+        gap: 4px !important; /* Smaller gap for mobile */
     }
-    .mobile-row > div {
-        flex: 1 1 50% !important;
-        padding: 8px !important;
+    .force-mobile-row > div {
+        width: 50% !important;
+        padding: 8px !important; /* Smaller padding to save space */
+    }
+    /* Shrink text specifically on mobile to stop "packing" */
+    .force-mobile-row h3 {
+        font-size: 10px !important;
+        letter-spacing: 0.05em !important;
+    }
+    .force-mobile-row p, .force-mobile-row li {
+        font-size: 8px !important;
+        line-height: 1.2 !important;
     }
 }
     </style>
