@@ -166,6 +166,16 @@
     /* Adds breathing room between list items */
     .spaced-list li { margin-bottom: 12px !important; }
 }
+        @media (max-width: 767px) {
+    /* This targets ONLY mobile phones */
+    .mobile-side-by-side {
+        flex-direction: row !important;
+        gap: 8px !important;
+    }
+    .mobile-side-by-side > div {
+        width: 50% !important;
+    }
+}
     </style>
 </head>
 
