@@ -167,13 +167,13 @@
     .spaced-list li { margin-bottom: 12px !important; }
 }
         @media (max-width: 767px) {
-    /* This targets ONLY mobile phones */
-    .mobile-side-by-side {
+    .mobile-row {
+        display: flex !important;
         flex-direction: row !important;
-        gap: 8px !important;
     }
-    .mobile-side-by-side > div {
-        width: 50% !important;
+    .mobile-row > div {
+        flex: 1 1 50% !important;
+        padding: 8px !important;
     }
 }
     </style>
@@ -239,7 +239,7 @@
     </p>
 </div>
 
-                <div class="flex flex-col md:flex-row gap-8 w-full pb-8">
+                <div class="flex flex-col md:flex-row gap-8 w-full pb-8 mobile-row">
                     <div class="research-card neon-glow w-full md:w-auto md:flex-1 p-6">
                         <div class="flex flex-col md:flex-row items-start justify-between mb-8">
                             <div>
