@@ -43,13 +43,19 @@
     .highlight-glow { color: #ffffff !important; font-weight: 700; animation: highlight-pulse 2s infinite ease-in-out; }
     @keyframes highlight-pulse { 0%, 100% { text-shadow: 0 0 8px #fff; } 50% { text-shadow: 0 0 15px #fff; } }
 
-    /* Single Mobile Fix */
+    /* Mobile: Keep it stacked as you have it */
     @media (max-width: 767px) {
-        .force-mobile-row { display: flex !important; flex-direction: row !important; gap: 10px !important; }
-        .research-card { padding: 16px !important; border-radius: 20px !important; }
+        .force-mobile-row { display: flex !important; flex-direction: column !important; gap: 10px !important; }
+        .research-card { padding: 16px !important; border-radius: 20px !important; width: 100% !important; }
         .research-card h3 { font-size: 11px !important; }
         .research-card p, .research-card li { font-size: 9px !important; line-height: 1.4 !important; }
         .force-mobile-row .research-card img, .force-mobile-row .research-card video { height: 100px !important; }
+    }
+
+    /* Laptop: Reset the cards so they go side-by-side */
+    @media (min-width: 768px) {
+        .force-mobile-row { display: flex !important; flex-direction: row !important; }
+        .research-card { width: 50% !important; padding: 60px !important; }
     }
 </style>
 </head>
