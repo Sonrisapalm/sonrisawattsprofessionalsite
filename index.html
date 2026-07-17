@@ -61,9 +61,7 @@
             min-width: 0;
             box-shadow: 0 0 25px rgba(0,0,0,0.8);
         }
-        overflow-x: hidden; /* Prevents the page from wiggling left and right */
-}
-
+        
 /* Added to the main container logic */
 .max-w-[1800px] {
     width: 100%;
@@ -173,6 +171,62 @@
     font-weight: 700;
     animation: highlight-pulse 2s infinite ease-in-out;
 }
+        @media (max-width: 767px) {
+    /* 1. Ensure the parent container is flexible */
+    .force-mobile-row {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        gap: 10px !important;
+        align-items: stretch !important; /* Forces cards to be same height */
+    }
+    
+    /* 2. Each card takes 50% width and manages internal layout */
+    .force-mobile-row .research-card {
+        flex: 1 1 50% !important; /* flex: 1 allows it to grow/shrink nicely */
+        padding: 10px !important;
+        border-radius: 16px !important;
+        display: flex !important;
+        flex-direction: column !important; /* Keeps media at top, text below */
+        min-width: 0 !important; /* CRITICAL: Prevents text from breaking flexbox */
+    }
+
+    /* 3. Media sizing: Give it more space */
+    .force-mobile-row .research-card img, 
+    .force-mobile-row .research-card video,
+    .force-mobile-row .research-card div[class*="h-"] {
+        height: 140px !important; /* Taller media for better visuals */
+        min-height: 140px !important;
+        width: 100% !important;
+        object-fit: cover !important;
+        margin-bottom: 10px !important; /* Breathing room between media and text */
+    }
+
+    /* 4. Text optimization: Better scaling for small screens */
+    .force-mobile-row .research-card h3 { 
+        font-size: 11px !important; 
+        line-height: 1.3 !important; 
+        margin-bottom: 6px !important;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+    .force-mobile-row .research-card p, 
+    .force-mobile-row .research-card li { 
+        font-size: 9px !important; /* Slightly larger than 8px for readability */
+        line-height: 1.4 !important; 
+        margin-bottom: 6px !important;
+        word-wrap: break-word; /* Ensures long words don't break the layout */
+    }
+}
+        @keyframes highlight-pulse {
+    0%, 100% { 
+        text-shadow: 0 0 8px rgba(255, 255, 255, 0.6), 0 0 15px rgba(255, 255, 255, 0.3);
+    }
+    50% { 
+        text-shadow: 0 0 15px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 0.8);
+    }
+}
+
     </style>
 </head>
 
