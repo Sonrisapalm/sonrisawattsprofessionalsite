@@ -7,57 +7,209 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;700;900&display=swap" rel="stylesheet">
-   <style>
-    /* Particle Background Layer */
-    #tsparticles { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background: #020202; }
+    <style>
+        /* Particle Background Layer */
+        #tsparticles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: #020202;
+        }
 
-    body { color: #fff; font-family: 'Inter', sans-serif; height: 100vh; margin: 0; overflow: hidden; background: transparent; }
+        body {
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden; 
+            background: transparent;
+        }
 
-    .content-scroll { overflow-y: auto; height: 100vh; padding-right: 20px; scrollbar-width: thin; scrollbar-color: #444 #0a0a0a; }
-    .content-scroll::-webkit-scrollbar { width: 8px; }
-    .content-scroll::-webkit-scrollbar-track { background: rgba(0,0,0,0.5); }
-    .content-scroll::-webkit-scrollbar-thumb { background: linear-gradient(180deg, #333, #111); border-radius: 10px; border: 1px solid #444; }
-    .content-scroll::-webkit-scrollbar-thumb:hover { background: #555; box-shadow: 0 0 10px rgba(255,255,255,0.2); }
+        .content-scroll { 
+            overflow-y: auto; 
+            height: 100vh; 
+            padding-right: 20px; 
+            scrollbar-width: thin;
+            scrollbar-color: #444 #0a0a0a;
+        }
+        .content-scroll::-webkit-scrollbar { width: 8px; }
+        .content-scroll::-webkit-scrollbar-track { background: rgba(0,0,0,0.5); }
+        .content-scroll::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #333, #111);
+            border-radius: 10px;
+            border: 1px solid #444;
+        }
+        .content-scroll::-webkit-scrollbar-thumb:hover { background: #555; box-shadow: 0 0 10px rgba(255,255,255,0.2); }
 
-    .glass-luxury { background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(40px); border: 1px solid rgba(255,255,255,.1); border-radius: 40px; transition: all 0.4s ease; }
+        .glass-luxury {
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(40px);
+            border: 1px solid rgba(255,255,255,.1);
+            border-radius: 40px;
+            transition: all 0.4s ease;
+        }
 
-    .research-card { background: rgba(0, 0, 0, 0.7); border: 1px solid rgba(255,255,255,.15); border-radius: 40px; padding: 60px; flex: 1; min-width: 0; box-shadow: 0 0 25px rgba(0,0,0,0.8); }
+        .research-card {
+            background: rgba(0, 0, 0, 0.7);
+            border: 1px solid rgba(255,255,255,.15);
+            border-radius: 40px;
+            padding: 60px;
+            flex: 1;
+            min-width: 0;
+            box-shadow: 0 0 25px rgba(0,0,0,0.8);
+        }
+        overflow-x: hidden; /* Prevents the page from wiggling left and right */
+}
 
-    .max-w-[1800px] { width: 100%; padding-left: 1rem; padding-right: 1rem; }
+/* Added to the main container logic */
+.max-w-[1800px] {
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
 
-    .spaced-list li { margin-bottom: 24px; line-height: 1.7; }
+        .spaced-list li { margin-bottom: 24px; line-height: 1.7; }
+        
+        @keyframes text-glow-pulse {
+            0%, 100% { text-shadow: 0 0 5px rgba(255,255,255,0.2), 0 0 10px rgba(255,255,255,0.1); }
+            50% { text-shadow: 0 0 15px rgba(255,255,255,0.6), 0 0 25px rgba(255,255,255,0.4); }
+        }
+        .text-glow { animation: text-glow-pulse 3s infinite ease-in-out; }
+
+        @keyframes neon-pulse {
+            0%, 100% { box-shadow: 0 0 5px rgba(255,255,255,0.1), inset 0 0 5px rgba(0,0,0,0.5); }
+            50% { box-shadow: 0 0 20px rgba(255,255,255,0.2), inset 0 0 10px rgba(0,0,0,0.5); }
+        }
+        .neon-glow { animation: neon-pulse 3s infinite ease-in-out; }
+
+        h1, h2, h3 { font-weight: 900; letter-spacing: 0.15em; text-transform: uppercase; }
+        .reveal-text { animation: slideIn 0.8s ease-out forwards; }
+        @keyframes slideIn { from { opacity: 0; transform: translateX(-20px); } to { opacity: 1; transform: translateX(0); } }
+        @media (max-width: 768px) {
+    .research-card {
+        padding: 24px !important; /* Reduces space so text stays neat */
+        border-radius: 20px !important;
+    }
+    .spaced-list li {
+        margin-bottom: 16px !important; /* Tightens the spacing for mobile readability */
+    }
+}
+        @media (max-width: 768px) {
+        .research-card {
+            padding: 16px !important; 
+            border-radius: 20px !important;
+        }
+        .research-card h3 { font-size: 14px !important; }
+        .research-card p, .research-card li { 
+            font-size: 10px !important; /* Adjusted slightly up from 8px for better readability */
+            line-height: 1.5 !important; 
+        }
+        .spaced-list li { margin-bottom: 8px !important; }
+    }
+      .luxury-emerald-box {
+    background: rgba(0, 20, 0, 0.4); /* Dark emerald tint */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    /* Refined gold border with inner shadow */
+    border: 2px solid #bfa071; 
+    border-radius: 16px;
+    padding: 20px;
+    max-width: 600px;
+    margin-top: 1.5rem; /* Equivalent to mt-6 */
+    /* Deep green background glow */
+    box-shadow: 0 0 30px rgba(0, 50, 0, 0.6); 
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle background shimmer effect for depth */
+.luxury-emerald-box::before {
+    content: '';
+    position: absolute;
+    top: -50%; left: -50%;
+    width: 200%; height: 200%;
+    background: radial-gradient(circle, rgba(191, 160, 113, 0.05) 0%, rgba(0,0,0,0) 70%);
+    transform: rotate(30deg);
+    pointer-events: none;
+}
+
+/* Text styling with a pulsing golden radiance */
+@keyframes expensive-gold-glow {
+    0%, 100% { text-shadow: 0 0 8px rgba(235, 215, 185, 0.6); }
+    50% { text-shadow: 0 0 16px rgba(235, 215, 185, 0.9); }
+}
+
+.text-glow-gold { 
+    animation: expensive-gold-glow 4s infinite ease-in-out;
+    color: #ebd7b9; /* Soft, readable champagne gold */
+    font-size: 0.8rem; /* Small, elegant size */
+    line-height: 1.6;
+    letter-spacing: 0.03em;
+    font-weight: 300;
+    text-transform: none; /* Sentence case */
+}
+        @media (max-width: 768px) {
+    /* Ensures containers don't overflow the screen width */
+    .research-card {
+        padding: 24px !important; 
+        border-radius: 20px !important;
+    }
+    /* Prevents the text from being too large for phone screens */
+    .research-card p, .research-card li { 
+        font-size: 12px !important; 
+        line-height: 1.5 !important; 
+    }
+    /* Adds breathing room between list items */
+    .spaced-list li { margin-bottom: 12px !important; }
+}
     
-    /* Animations */
-    @keyframes text-glow-pulse { 0%, 100% { text-shadow: 0 0 5px rgba(255,255,255,0.2); } 50% { text-shadow: 0 0 15px rgba(255,255,255,0.6); } }
-    .text-glow { animation: text-glow-pulse 3s infinite ease-in-out; }
-    @keyframes neon-pulse { 0%, 100% { box-shadow: 0 0 5px rgba(255,255,255,0.1); } 50% { box-shadow: 0 0 20px rgba(255,255,255,0.2); } }
-    .neon-glow { animation: neon-pulse 3s infinite ease-in-out; }
-
-    h1, h2, h3 { font-weight: 900; letter-spacing: 0.15em; text-transform: uppercase; }
-    .reveal-text { animation: slideIn 0.8s ease-out forwards; }
-    @keyframes slideIn { from { opacity: 0; transform: translateX(-20px); } to { opacity: 1; transform: translateX(0); } }
+@media (max-width: 767px) {
+    /* 1. Force the row layout */
+    .force-mobile-row {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        gap: 12px !important; /* Slightly more gap for separation */
+    }
     
-    .luxury-emerald-box { background: rgba(0, 20, 0, 0.4); backdrop-filter: blur(12px); border: 2px solid #bfa071; border-radius: 16px; padding: 20px; margin-top: 1.5rem; display: inline-block; position: relative; overflow: hidden; }
-    
-    .text-glow-gold { color: #ebd7b9; font-size: 0.8rem; line-height: 1.6; letter-spacing: 0.03em; }
-    .highlight-glow { color: #ffffff !important; font-weight: 700; animation: highlight-pulse 2s infinite ease-in-out; }
-    @keyframes highlight-pulse { 0%, 100% { text-shadow: 0 0 8px #fff; } 50% { text-shadow: 0 0 15px #fff; } }
-
-    /* Mobile: Keep it stacked as you have it */
-    @media (max-width: 767px) {
-        .force-mobile-row { display: flex !important; flex-direction: column !important; gap: 10px !important; }
-        .research-card { padding: 16px !important; border-radius: 20px !important; width: 100% !important; }
-        .research-card h3 { font-size: 11px !important; }
-        .research-card p, .research-card li { font-size: 9px !important; line-height: 1.4 !important; }
-        .force-mobile-row .research-card img, .force-mobile-row .research-card video { height: 100px !important; }
+    /* 2. Each card takes 50% width */
+    .force-mobile-row .research-card {
+        flex: 0 0 47% !important; /* Slightly less than 50% for safety */
+        padding: 12px !important;
+        border-radius: 16px !important;
     }
 
-    /* Laptop: Reset the cards so they go side-by-side */
-    @media (min-width: 768px) {
-        .force-mobile-row { display: flex !important; flex-direction: row !important; }
-        .research-card { width: 50% !important; padding: 60px !important; }
+    /* 3. FIX: Larger Media (set to a balanced 120px height) */
+    .force-mobile-row .research-card img, 
+    .force-mobile-row .research-card video,
+    .force-mobile-row .research-card div[class*="h-"] {
+        height: 120px !important; /* Taller media */
+        min-height: 120px !important;
+        width: 100% !important;
+        object-fit: cover !important;
     }
-</style>
+
+    /* 4. FIX: Readable Text */
+    .force-mobile-row .research-card h3 { 
+        font-size: 12px !important; 
+        line-height: 1.2 !important; 
+    }
+    .force-mobile-row .research-card p, 
+    .force-mobile-row .research-card li { 
+        font-size: 10px !important; 
+        line-height: 1.4 !important; 
+    }
+}
+        .highlight-glow {
+    color: #ffffff !important;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.5);
+    font-weight: 700; /* Makes it pop more */
+}
+    </style>
 </head>
 
 <body class="p-6 md:p-12">
@@ -98,25 +250,27 @@
         </p>
     </div>
 
-   <!-- Clickable Map Wrapper -->
-<div class="relative w-full md:w-1/2 h-48 md:h-64 rounded-[30px] overflow-hidden border border-white/10 neon-glow group">
-    
-    <!-- The Interactive Map: Updated with St Kitts and Nevis location -->
-    <iframe class="w-full h-full grayscale opacity-70" 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d124314.18042456073!2d-62.77587121679688!3d17.291771199999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8c0d481079d389a9%3A0x67699d793836a3cc!2sSaint+Kitts+and+Nevis!5e0!3m2!1sen!2sus!4v1625678901234!5m2!1sen!2sus" 
-            style="border:0;" 
-            allowfullscreen="" 
-            loading="lazy">
-    </iframe>
+    <!-- Clickable Map Wrapper -->
+    <a href="https://www.google.com/maps/place/Saint+Kitts+and+Nevis/" 
+       target="_blank" 
+       class="w-full md:w-1/2 h-48 md:h-64 rounded-[30px] overflow-hidden border border-white/10 neon-glow relative group block">
+        
+        <iframe class="w-full h-full grayscale opacity-70 pointer-events-none" 
+                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d80000.0!2d-62.7!3d17.3!2m3!1f0!2f45!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2sus!4v1&z=10" 
+                loading="lazy">
+        </iframe>
 
-    <!-- The 'Ghost' Overlay: This intercepts clicks until activated -->
-    <div id="map-overlay" 
-         onclick="this.style.display='none'; this.previousElementSibling.classList.remove('grayscale', 'opacity-70');"
-         class="absolute inset-0 flex items-center justify-center bg-black/20 cursor-pointer transition-opacity duration-300">
-        <span class="text-[10px] uppercase tracking-[0.2em] bg-black/80 px-6 py-3 rounded-full border border-white/10">
-            Click to Interact
-        </span>
-    </div>
+        <!-- Hover Overlay -->
+        <div class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <span class="text-[10px] uppercase tracking-[0.2em] bg-black/80 px-6 py-3 rounded-full border border-white/10">Open in Maps</span>
+        </div>
+    </a>
+</div>
+              <div class="luxury-emerald-box">
+    <p class="text-glow-gold">
+        After eight (8) months of conducting independent research with the Emotion Encoded initiative,
+        <span class="highlight-glow">I was invited by the Stanford School of Medicine to integrate my findings into their Global Artificial Intelligence Literacy and Implementation Curriculum for Clincians and to First-author a manuscript.</span> This partnership formally incorporates my proprietary Caribbean physician insights into Stanford’s global open access curriculum, helping to address a critical data gap and establishing a permanent case study for clinical AI implementation.
+    </p>
 </div>
 
                 <div class="flex flex-col md:flex-row gap-8 w-full pb-8 force-mobile-row">
