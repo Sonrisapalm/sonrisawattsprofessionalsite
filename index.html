@@ -173,39 +173,35 @@
         display: flex !important;
         flex-direction: row !important;
         flex-wrap: nowrap !important;
-        gap: 6px !important;
-        align-items: stretch !important;
+        gap: 12px !important; /* Slightly more gap for separation */
     }
     
     /* 2. Each card takes 50% width */
     .force-mobile-row .research-card {
-        flex: 0 0 50% !important;
-        padding: 8px !important;
-        display: flex !important;
-        flex-direction: column !important;
+        flex: 0 0 47% !important; /* Slightly less than 50% for safety */
+        padding: 12px !important;
+        border-radius: 16px !important;
     }
 
-    /* 3. Force Media (Video and Images) to be small and consistent */
-    .force-mobile-row .research-card div[class*="h-"], 
+    /* 3. FIX: Larger Media (set to a balanced 120px height) */
     .force-mobile-row .research-card img, 
-    .force-mobile-row .research-card video {
-        height: 70px !important;
-        min-height: 70px !important;
+    .force-mobile-row .research-card video,
+    .force-mobile-row .research-card div[class*="h-"] {
+        height: 120px !important; /* Taller media */
+        min-height: 120px !important;
         width: 100% !important;
         object-fit: cover !important;
-        object-position: center !important;
     }
 
-    /* 4. Text scaling for readability */
+    /* 4. FIX: Readable Text */
     .force-mobile-row .research-card h3 { 
-        font-size: 10px !important; 
-        line-height: 1.1 !important; 
-        margin-top: 4px !important; 
+        font-size: 12px !important; 
+        line-height: 1.2 !important; 
     }
     .force-mobile-row .research-card p, 
     .force-mobile-row .research-card li { 
-        font-size: 8px !important; 
-        line-height: 1.2 !important; 
+        font-size: 10px !important; 
+        line-height: 1.4 !important; 
     }
 }
     </style>
