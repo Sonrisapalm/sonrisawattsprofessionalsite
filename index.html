@@ -260,21 +260,23 @@
         </p>
     </div>
 
-    <!-- Clickable Map Wrapper -->
-    <a href="https://www.google.com/maps/place/Saint+Kitts+and+Nevis/" 
-       target="_blank" 
-       class="w-full md:w-1/2 h-48 md:h-64 rounded-[30px] overflow-hidden border border-white/10 neon-glow relative group block">
-        
-        <iframe class="w-full h-full grayscale opacity-70 pointer-events-none" 
-                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d80000.0!2d-62.7!3d17.3!2m3!1f0!2f45!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2sus!4v1&z=10" 
-                loading="lazy">
-        </iframe>
+   <!-- Clickable Map Wrapper -->
+<div class="relative w-full md:w-1/2 h-48 md:h-64 rounded-[30px] overflow-hidden border border-white/10 neon-glow group">
+    
+    <!-- The Interactive Map -->
+    <iframe class="w-full h-full grayscale opacity-70" 
+            src="https://www.google.com/maps/embed?pb=..." 
+            loading="lazy">
+    </iframe>
 
-        <!-- Hover Overlay -->
-        <div class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <span class="text-[10px] uppercase tracking-[0.2em] bg-black/80 px-6 py-3 rounded-full border border-white/10">Open in Maps</span>
-        </div>
-    </a>
+    <!-- The 'Ghost' Overlay: This intercepts clicks until activated -->
+    <div id="map-overlay" 
+         onclick="this.style.display='none'; this.previousElementSibling.classList.remove('grayscale', 'opacity-70');"
+         class="absolute inset-0 flex items-center justify-center bg-black/20 cursor-pointer transition-opacity duration-300">
+        <span class="text-[10px] uppercase tracking-[0.2em] bg-black/80 px-6 py-3 rounded-full border border-white/10">
+            Click to Interact
+        </span>
+    </div>
 </div>
               <div class="luxury-emerald-box">
     <p class="text-glow-gold">
