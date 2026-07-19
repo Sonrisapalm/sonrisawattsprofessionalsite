@@ -204,22 +204,21 @@
         line-height: 1.4 !important; 
     }
 }
-      @keyframes pulse-glow {
+     @keyframes white-pulse {
     0%, 100% {
-        /* Very soft, almost ghost-like glow */
-        text-shadow: 0 0 8px rgba(191, 160, 113, 0.2);
+        /* Very subtle white shimmer */
+        text-shadow: 0 0 3px rgba(255, 255, 255, 0.2);
     }
     50% {
-        /* Gentle, warm shimmer */
-        text-shadow: 0 0 12px rgba(191, 160, 113, 0.4);
+        /* Soft expansion, keeping opacity low so it doesn't blind */
+        text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
     }
 }
 
 .highlight-glow {
-    color: #ffffff !important;
-    font-weight: 700;
-    /* Slowed down even more to 4 seconds for a calming, high-end feel */
-    animation: pulse-glow 4s infinite ease-in-out;
+    color: #ffffff; /* Text is crisp white */
+    animation: white-pulse 4s infinite ease-in-out;
+    display: inline-block; /* Essential for animation to trigger */
 }
     </style>
 </head>
