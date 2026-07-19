@@ -206,18 +206,20 @@
 }
       @keyframes pulse-glow {
     0%, 100% {
-        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #bfa071;
+        /* Very soft, almost ghost-like glow */
+        text-shadow: 0 0 8px rgba(191, 160, 113, 0.2);
     }
     50% {
-        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #bfa071, 0 0 40px #bfa071;
+        /* Gentle, warm shimmer */
+        text-shadow: 0 0 12px rgba(191, 160, 113, 0.4);
     }
 }
 
-/* Update your class to use this animation */
 .highlight-glow {
     color: #ffffff !important;
     font-weight: 700;
-    animation: pulse-glow 2s infinite ease-in-out;
+    /* Slowed down even more to 4 seconds for a calming, high-end feel */
+    animation: pulse-glow 4s infinite ease-in-out;
 }
     </style>
 </head>
