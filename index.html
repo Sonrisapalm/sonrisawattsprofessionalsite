@@ -262,20 +262,20 @@
     </div>
 
     <!-- Clickable Map Wrapper -->
-    <a href="https://www.google.com/maps/place/Saint+Kitts+and+Nevis/" 
-       target="_blank" 
-       class="w-full md:w-1/2 h-48 md:h-64 rounded-[30px] overflow-hidden border border-white/10 neon-glow relative group block">
-        
-        <iframe class="w-full h-full grayscale opacity-70 pointer-events-none" 
-                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d80000.0!2d-62.7!3d17.3!2m3!1f0!2f45!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2sus!4v1&z=10" 
+   <!-- Interactive 3D Tilted Map Container -->
+    <div class="w-full md:w-1/2 h-48 md:h-64 rounded-[30px] overflow-hidden border border-white/10 neon-glow relative">
+        <iframe class="w-full h-full" 
+                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d30000!2d-62.75!3d17.35!2m3!1f30!2f45!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2sus!4v1&z=12" 
                 loading="lazy">
         </iframe>
-
-        <!-- Hover Overlay -->
-        <div class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <span class="text-[10px] uppercase tracking-[0.2em] bg-black/80 px-6 py-3 rounded-full border border-white/10">Open in Maps</span>
+        
+        <!-- Mobile Helper Overlay -->
+        <div class="absolute inset-x-0 bottom-3 flex justify-center pointer-events-none md:hidden">
+            <span class="text-[8px] uppercase tracking-[0.2em] bg-black/80 px-4 py-1.5 rounded-full border border-white/10 text-zinc-400">
+                Use two fingers to move map
+            </span>
         </div>
-    </a>
+    </div>
               <div class="luxury-emerald-box">
     <p class="text-glow-gold">
         After eight (8) months of conducting independent research with the Emotion Encoded initiative,
