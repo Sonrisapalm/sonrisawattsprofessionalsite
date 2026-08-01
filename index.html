@@ -262,17 +262,17 @@
     </div>
 
     <!-- Clickable Map Wrapper -->
-   <!-- Interactive 3D Tilted Map Container -->
-    <div class="w-full md:w-1/2 h-48 md:h-64 rounded-[30px] overflow-hidden border border-white/10 neon-glow relative">
-        <iframe class="w-full h-full pointer-events-auto touch-auto" 
+  <!-- Interactive 3D Tilted Map Container with Tap-to-Activate Layer -->
+    <div class="w-full md:w-1/2 h-48 md:h-64 rounded-[30px] overflow-hidden border border-white/10 neon-glow relative" id="map-container">
+        <iframe class="w-full h-full pointer-events-none md:pointer-events-auto" id="google-map"
                 src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d150000.0!2d-62.75!3d17.35!2m3!1f30!2f45!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2sus!4v1&z=8" 
                 loading="lazy">
         </iframe>
         
-        <!-- Mobile Helper Overlay -->
-        <div class="absolute inset-x-0 bottom-3 flex justify-center pointer-events-none md:hidden">
-            <span class="text-[8px] uppercase tracking-[0.2em] bg-black/80 px-4 py-1.5 rounded-full border border-white/10 text-zinc-400">
-                Use two fingers to move map
+        <!-- Mobile Tap Overlay (Enables interaction on touch) -->
+        <div class="absolute inset-0 bg-black/30 flex items-center justify-center md:hidden transition-opacity duration-300" id="map-overlay" onclick="this.style.pointerEvents='none'; this.style.opacity='0'; document.getElementById('google-map').style.pointerEvents='auto';">
+            <span class="text-[9px] uppercase tracking-[0.3em] bg-black/90 px-5 py-2 rounded-full border border-white/20 text-white font-medium shadow-2xl">
+                Tap to interact with map
             </span>
         </div>
     </div>
