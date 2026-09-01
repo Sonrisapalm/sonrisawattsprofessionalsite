@@ -1,1 +1,233 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/jpeg" href="images/favicon.jpg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;700;900&display=swap" rel="stylesheet">
+    <style>
+        #tsparticles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: #020202;
+        }
 
+        body {
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden; 
+            background: transparent;
+        }
+
+        .content-scroll { 
+            overflow-y: auto; 
+            height: 100vh; 
+            padding-right: 20px; 
+            scrollbar-width: thin;
+            scrollbar-color: #444 #0a0a0a;
+        }
+        .content-scroll::-webkit-scrollbar { width: 8px; }
+        .content-scroll::-webkit-scrollbar-track { background: rgba(0,0,0,0.5); }
+        .content-scroll::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #333, #111);
+            border-radius: 10px;
+            border: 1px solid #444;
+        }
+        .content-scroll::-webkit-scrollbar-thumb:hover { background: #555; box-shadow: 0 0 10px rgba(255,255,255,0.2); }
+
+        .glass-luxury {
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(40px);
+            border: 1px solid rgba(255,255,255,.1);
+            border-radius: 40px;
+            transition: all 0.4s ease;
+        }
+
+        .research-card {
+            background: rgba(0, 0, 0, 0.7);
+            border: 1px solid rgba(255,255,255,.15);
+            border-radius: 40px;
+            padding: 60px;
+            flex: 1;
+            min-width: 0;
+            box-shadow: 0 0 25px rgba(0,0,0,0.8);
+        }
+
+        .max-w-[1800px] {
+            width: 100%;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        .spaced-list li { margin-bottom: 24px; line-height: 1.7; }
+        
+        @keyframes text-glow-pulse {
+            0%, 100% { text-shadow: 0 0 5px rgba(255,255,255,0.2), 0 0 10px rgba(255,255,255,0.1); }
+            50% { text-shadow: 0 0 15px rgba(255,255,255,0.6), 0 0 25px rgba(255,255,255,0.4); }
+        }
+        .text-glow { animation: text-glow-pulse 3s infinite ease-in-out; }
+
+        @keyframes neon-pulse {
+            0%, 100% { box-shadow: 0 0 5px rgba(255,255,255,0.1), inset 0 0 5px rgba(0,0,0,0.5); }
+            50% { box-shadow: 0 0 20px rgba(255,255,255,0.2), inset 0 0 10px rgba(0,0,0,0.5); }
+        }
+        .neon-glow { animation: neon-pulse 3s infinite ease-in-out; }
+
+        h1, h2, h3 { font-weight: 900; letter-spacing: 0.15em; text-transform: uppercase; }
+        .reveal-text { animation: slideIn 0.8s ease-out forwards; }
+        @keyframes slideIn { from { opacity: 0; transform: translateX(-20px); } to { opacity: 1; transform: translateX(0); } }
+
+        @media (max-width: 768px) {
+            .research-card {
+                padding: 24px !important; 
+                border-radius: 20px !important;
+            }
+            .research-card h3 { font-size: 14px !important; }
+            .research-card p, .research-card li { 
+                font-size: 12px !important; 
+                line-height: 1.5 !important; 
+            }
+            .spaced-list li { margin-bottom: 12px !important; }
+        }
+    </style>
+</head>
+
+<body class="p-6 md:p-12">
+    <div id="tsparticles"></div>
+
+    <div class="max-w-[1800px] mx-auto flex flex-col md:flex-row gap-8 md:gap-16 h-full items-start">
+        <nav class="w-full md:w-64 space-y-6 md:space-y-12 shrink-0">
+            <h1 class="text-3xl">Sonrisa Watts</h1>
+            <ul class="space-y-6">
+                <li><a href="index.html" class="text-[9px] tracking-[0.3em] uppercase opacity-50 hover:opacity-100 transition">Home</a></li>
+                <li><a href="#" class="text-[9px] tracking-[0.3em] uppercase opacity-50 hover:opacity-100 transition">About</a></li>
+                <li><a href="#" class="text-[9px] tracking-[0.3em] uppercase opacity-50 hover:opacity-100 transition">Methods</a></li>
+                <li><a href="#" class="text-[9px] tracking-[0.3em] uppercase opacity-50 hover:opacity-100 transition">PrePrint</a></li>
+                <li><a href="#" class="text-[9px] tracking-[0.3em] uppercase opacity-50 hover:opacity-100 transition">Ethics</a></li>
+                <li><a href="accomplishments.html" class="text-[9px] tracking-[0.3em] uppercase opacity-50 hover:opacity-100 transition">Accomplishments</a></li>
+                <li><a href="#" class="text-[9px] tracking-[0.3em] uppercase opacity-50 hover:opacity-100 transition">Contact</a></li>
+                <li><a href="https://www.sonrisawatts.com/" class="text-[9px] tracking-[0.3em] uppercase opacity-50 hover:opacity-100 transition">sonrisawattsarchive.com: Personal Pictures: Family, Fun Videos and more!</a></li>
+            </ul>
+        </nav>
+
+        <main class="flex-grow content-scroll w-full">
+            <section class="space-y-16 md:space-y-32 py-12 md:py-24 max-w-4xl mx-auto">
+                <div class="research-card neon-glow w-full p-8 md:p-12">
+                    <p class="text-[9px] md:text-[10px] uppercase text-zinc-500 tracking-[0.2em] mb-4">GLOBAL BENCHMARK & CURRICULUM INTEGRATION</p>
+                    <h3 class="text-xl md:text-2xl text-white mb-2">EMOTION ENCODED X STANFORD SCHOOL OF MEDICINE COLLABORATION</h3>
+                    <p class="text-[10px] uppercase text-zinc-400 tracking-[0.2em] mb-8">Accomplishments: Emotion Encoded x Stanford School of Medicine Collaboration</p>
+                    
+                    <div class="text-zinc-300 text-sm md:text-base leading-relaxed font-light space-y-8">
+                        <div>
+                            <h4 class="text-white text-xs md:text-sm font-bold tracking-[0.15em] uppercase mb-3">01 / CURRICULUM PARTNERSHIP</h4>
+                            <p>I founded Emotion Encoded as a solo project, 24 years old, right after graduating from BSc. 8 months later, I'm proud to announce: Stanford University School of Medicine invited me to be a collaborating partner and has requested my research to be in a Global Open-access Implementation and Literacy curriculum for Clinicians using Artificial Intelligence. Beyond its integration at Stanford, this curriculum is being scaled to medical institutions, ministries, and departments of health globally. This milestone expands the reach of the research, transforming how clinical environments worldwide approach AI literacy and implementation. 🙏🏾💯</p>
+                        </div>
+
+                        <div>
+                            <h4 class="text-white text-xs md:text-sm font-bold tracking-[0.15em] uppercase mb-3">02 / ACADEMIC MANUSCRIPT</h4>
+                            <p>I am the first author of a manuscript with Stanford faculty on the implications of artificial intelligence in high stakes fields on Caribbean professionals, which is in prep.</p>
+                        </div>
+
+                        <div class="pt-4 border-t border-white/10">
+                            <p class="text-[10px] uppercase text-zinc-400 tracking-[0.2em] mb-2">Stanford University - School of Medicine | Global Health Innovation</p>
+                            <p class="text-[10px] uppercase text-zinc-500 tracking-[0.2em] mb-6">Research Collaborative Partnership & Co-Author</p>
+                            <p class="text-[10px] uppercase text-zinc-500 tracking-[0.2em] mb-6">March 2026 – Present</p>
+                            
+                            <ul class="spaced-list text-zinc-300 text-sm list-disc pl-4">
+                                <li>Invited by Stanford School of Medicine to incorporate Emotion Encoded’s proprietary Caribbean physician insights into Stanford’s Global AI Literacy and Implementation Open-access Curriculum for clinicians using AI, having been formally requested by faculty.</li>
+                                <li>Collaborative Partnership: Facilitating the institutional integration and adoption of findings into curriculum to establish a permanent case study for AI implementation.</li>
+                                <li>Provided localized qualitative datasets and thematic analyses to architect frameworks for calibrating human-AI trust among medical specialists, translating regional data into scalable insights for clinical automation and global health delivery within resource-constrained environments.</li>
+                                <li>Formulated the international distribution framework and scaling the curriculum directly to global medical faculties, universities, ministries, and departments of health.</li>
+                                <li>Co-authoring a first-author peer-reviewed manuscript with Stanford Faculty on Caribbean physician perspectives on clinical AI trust.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div style="width: 100%; border-bottom: 1px solid rgba(255, 255, 255, 0.05); background: #000; display: flex; justify-content: center; padding: 20px 0; margin-top: 30px;">
+                        <img src="images/Emotion_Encoded_x_Stanford_University_Collaboration.jpg" 
+                             alt="Sonrisa Watts- Emotion Encoded, Stanford School of Medicine Collaboration, Stanford University, Curriculum" 
+                             style="width: 70%; max-width: 600px; height: auto; display: block; object-fit: contain;">
+                    </div>
+
+                    <div style="width: 100%; border-bottom: 1px solid rgba(255, 255, 255, 0.05); background: #000; display: flex; justify-content: center; padding: 20px 0;">
+                        <img src="images/Emotionencodedxstanfordcollab.jpg" 
+                             alt="Sonrisa Watts- Emotion Encoded, Stanford School of Medicine Collaboration, Stanford University, Curriculum" 
+                             style="width: 70%; max-width: 600px; height: auto; display: block; object-fit: contain;">
+                    </div>
+
+                    <div class="flex flex-col gap-6 mt-12">
+                        <div class="research-card neon-glow p-6 text-center">
+                            <div class="text-[9px] uppercase tracking-[0.3em] text-zinc-400 font-semibold mb-4">PREVIEW // CURRICULUM</div>
+                            <div class="glass-luxury relative group overflow-hidden rounded-[20px] shadow-2xl border border-white/10 h-40 md:h-60 flex items-center justify-center neon-glow mb-6">
+                                <span class="text-[9px] uppercase tracking-[0.3em] text-white/70 font-light italic">[ Preview Pending ]</span>
+                            </div>
+                            <a href="#" class="inline-block glass-luxury px-10 py-4 rounded-full border border-white/10 hover:bg-white/10 transition-all duration-300">
+                                <span class="text-[10px] uppercase tracking-[0.3em] text-white font-medium">View Curriculum →</span>
+                            </a>
+                        </div>
+
+                        <div class="research-card neon-glow p-6 text-center mt-6">
+                            <div class="text-[9px] uppercase tracking-[0.3em] text-zinc-400 font-semibold mb-4">PREVIEW // MANUSCRIPT</div>
+                            <div class="glass-luxury relative group overflow-hidden rounded-[20px] shadow-2xl border border-white/10 h-40 md:h-60 flex items-center justify-center neon-glow mb-6">
+                                <span class="text-[9px] uppercase tracking-[0.3em] text-white/70 font-light italic">[ Preview Pending ]</span>
+                            </div>
+                            <a href="#" class="inline-block glass-luxury px-10 py-4 rounded-full border border-white/10 hover:bg-white/10 transition-all duration-300">
+                                <span class="text-[10px] uppercase tracking-[0.3em] text-white font-medium">View Manuscript →</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="mt-16 text-center text-[9px] uppercase tracking-[0.3em] text-zinc-500">
+                        Sonrisa Watts // Emotion Encoded // 2026
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        tsParticles.load("tsparticles", {
+            particles: {
+                number: { value: 60, density: { enable: true, value_area: 800 } },
+                color: { value: "#ffffff" },
+                shape: { type: "circle" },
+                opacity: { value: 0.3, random: true },
+                size: { value: 2, random: true },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: "#ffffff",
+                    opacity: 0.2,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 1,
+                    direction: "none",
+                    random: true,
+                    out_mode: "out"
+                }
+            },
+            interactivity: {
+                detect_on: "window",
+                events: {
+                    onhover: { enable: true, mode: "grab" },
+                    onclick: { enable: true, mode: "push" }
+                },
+                modes: {
+                    grab: { distance: 200, line_linked: { opacity: 0.5 } }
+                }
+            },
+            retina_detect: true
+        });
+    </script>
+</body>
+</html>
