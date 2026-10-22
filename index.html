@@ -64,9 +64,16 @@
         border: 1px solid rgba(255,255,255,.15);
         border-radius: 40px;
         padding: 60px;
-        flex: 1;
-        min-width: 0;
+        flex: 0 0 85vw;
+        min-width: 85vw;
         box-shadow: 0 0 25px rgba(0,0,0,0.8);
+    }
+
+    @media (min-width: 768px) {
+        .research-card {
+            flex: 1;
+            min-width: 0;
+        }
     }
 
     .max-w-[1800px] {
@@ -184,6 +191,9 @@
         }
     }
 </style>
+</head>
+<body class="h-full">
+<div id="tsparticles"></div>
 <div class="max-w-[1800px] mx-auto flex flex-col md:flex-row gap-8 md:gap-16 h-full items-start">
     <nav class="desktop-nav w-64 space-y-12 shrink-0">
         <h1 class="text-3xl">Sonrisa Watts</h1>
@@ -256,8 +266,8 @@
                 </p>
             </div>
 
-            <div class="flex flex-row gap-8 w-full pb-8">
-                <div class="research-card neon-glow flex-1 p-6">
+            <div class="flex flex-row gap-6 md:gap-8 w-full pb-8 overflow-x-auto scrollbar-none">
+                <div class="research-card neon-glow p-6">
                     <div class="flex flex-col md:flex-row items-start justify-between mb-8">
                         <div>
                             <div class="relative group overflow-hidden rounded-[20px] mb-8 shadow-2xl border border-white/10 h-48 md:h-80 w-full neon-glow">
@@ -286,7 +296,7 @@
                     </ul>
                 </div>
 
-                <div class="research-card neon-glow flex-1 p-6">
+                <div class="research-card neon-glow p-6">
                     <div class="relative group overflow-hidden rounded-[20px] mb-8 shadow-2xl border border-white/10 h-48 md:h-80 w-full neon-glow flex items-center justify-center bg-black/40">
                         <span class="text-[10px] uppercase text-zinc-500 tracking-[0.3em] animate-pulse">Preview Video Pending</span>
                     </div>
@@ -297,7 +307,7 @@
                     <div class="relative group overflow-hidden rounded-[30px] mb-8 shadow-2xl border border-white/10 h-60 md:h-80 neon-glow">
                         <img src="images/Emotion_Encoded_x_Stanford_University_Collaboration.jpg" 
                          alt="Sonrisa Watts Founder of Emotion Encoded Stanford University School of Medicine Collaboration" 
-                        class="w-full h-full object-contain transition-transform duration-[2000ms] group-hover:scale-105">                      
+                        class="w-full h-full object-contain transition-transform duration-[2000ms] group-hover:scale-105">                    
                     </div>
                     <ul class="spaced-list text-zinc-300 text-sm list-disc pl-4 animate-in fade-in duration-1000">
                         <li><span class="text-glow font-bold">Invited by Stanford School of Medicine to incorporate Emotion Encoded’s proprietary Caribbean physician insights into a Stanford Global Artificial Intelligence Literacy and Implementation Curriculum on clinicians using Artificial Intelligence,</span> having been formally requested by faculty.</li>
