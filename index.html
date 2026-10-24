@@ -2,6 +2,7 @@
 <html lang="en" class="h-full">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/jpeg" href="images/favicon.jpg">
     <title>Sonrisa Watts | Founder of Emotion Encoded</title>
     <meta name="description" content="Sonrisa Watts is an independent researcher and founder of Emotion Encoded, based in St. Kitts & Nevis, specializing in Artificial Intelligence, cognitive-emotional barriers, and human-system trust.">
@@ -10,7 +11,6 @@
     <meta property="og:description" content="Independent research initiative investigating cognitive-emotional barriers, heuristics, and trust calibration in Artificial Intelligence.">
     <meta property="og:url" content="https://www.sonrisawatts.com/">
     <meta property="og:type" content="website">
-    <!-- Rest of your existing head links -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;700;900&display=swap" rel="stylesheet">
@@ -64,16 +64,9 @@
         border: 1px solid rgba(255,255,255,.15);
         border-radius: 40px;
         padding: 60px;
-        flex: 0 0 85vw;
-        min-width: 85vw;
+        flex: 1;
+        min-width: 0;
         box-shadow: 0 0 25px rgba(0,0,0,0.8);
-    }
-
-    @media (min-width: 768px) {
-        .research-card {
-            flex: 1;
-            min-width: 0;
-        }
     }
 
     .max-w-[1800px] {
@@ -266,8 +259,8 @@
                 </p>
             </div>
 
-            <div class="flex flex-row gap-6 md:gap-8 w-full pb-8 overflow-x-auto scrollbar-none">
-                <div class="research-card neon-glow p-6">
+            <div class="flex flex-col md:flex-row gap-8 w-full pb-8">
+                <div class="research-card neon-glow flex-1 p-6">
                     <div class="flex flex-col md:flex-row items-start justify-between mb-8">
                         <div>
                             <div class="relative group overflow-hidden rounded-[20px] mb-8 shadow-2xl border border-white/10 h-48 md:h-80 w-full neon-glow">
@@ -296,7 +289,7 @@
                     </ul>
                 </div>
 
-                <div class="research-card neon-glow p-6">
+                <div class="research-card neon-glow flex-1 p-6">
                     <div class="relative group overflow-hidden rounded-[20px] mb-8 shadow-2xl border border-white/10 h-48 md:h-80 w-full neon-glow flex items-center justify-center bg-black/40">
                         <span class="text-[10px] uppercase text-zinc-500 tracking-[0.3em] animate-pulse">Preview Video Pending</span>
                     </div>
